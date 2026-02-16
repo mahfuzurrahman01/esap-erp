@@ -2,7 +2,7 @@ import { useRouter } from "next/navigation"
 
 import { useMutation } from "@tanstack/react-query"
 import { signIn, signOut, useSession } from "next-auth/react"
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 import { toast } from "react-hot-toast"
 
 import { useUserById } from "@/hooks/auth/use-user"
@@ -25,6 +25,7 @@ export function useCurrentUser() {
 
 export function useLogin() {
   const router = useRouter()
+  const locale = useLocale()
   const t = useTranslations("form")
 
   return useMutation({
@@ -39,9 +40,15 @@ export function useLogin() {
       }
       return apiResponse
     },
-    onSuccess: () => {
+    onSuccess: async () => {
       toast.success(t("form-user-successfully-logged-in"))
-      router.push("/")
+      // Wait for session to be established
+      await new Promise((resolve) => setTimeout(resolve, 200))
+      // Get callbackUrl from query params or default to dashboard
+      const searchParams = new URLSearchParams(window.location.search)
+      const callbackUrl = searchParams.get("callbackUrl") || `/${locale}`
+      // Use window.location for full page reload to ensure middleware recognizes the session
+      window.location.href = callbackUrl.startsWith("/") ? callbackUrl : `/${locale}${callbackUrl}`
     },
     onError: (error: any) => {
       // //console.log('error?.response?.data', error?.response?.data)
@@ -114,6 +121,7 @@ export function useLogout() {
 
 export function useGoogleLogin() {
   const router = useRouter()
+  const locale = useLocale()
   const t = useTranslations("form")
 
   return useMutation({
@@ -124,10 +132,16 @@ export function useGoogleLogin() {
       }
       return result
     },
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
       if (data?.ok) {
         toast.success(t("form-user-successfully-logged-in"))
-        router.push("/")
+        // Wait for session to be established
+        await new Promise((resolve) => setTimeout(resolve, 200))
+        // Get callbackUrl from query params or default to dashboard
+        const searchParams = new URLSearchParams(window.location.search)
+        const callbackUrl = searchParams.get("callbackUrl") || `/${locale}`
+        // Use window.location for full page reload to ensure middleware recognizes the session
+        window.location.href = callbackUrl.startsWith("/") ? callbackUrl : `/${locale}${callbackUrl}`
       }
     },
     onError: (error: Error) => {

@@ -58,6 +58,11 @@ const auth: AuthOptions = {
       return token
     },
     async redirect({ url, baseUrl }) {
+      // If url is a relative path, resolve it against baseUrl
+      if (url.startsWith("/")) return `${baseUrl}${url}`
+      // If url is on the same origin, allow it
+      if (new URL(url).origin === baseUrl) return url
+      // Otherwise, redirect to baseUrl
       return baseUrl
     },
   },
