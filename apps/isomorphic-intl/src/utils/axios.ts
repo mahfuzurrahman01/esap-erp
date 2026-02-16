@@ -1,5 +1,6 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios"
 import { getSession } from "next-auth/react"
+import type { Session } from "next-auth"
 
 // Enum to specify which API endpoint to use
 export enum ApiEndpoint {
@@ -18,13 +19,16 @@ const createAxiosInstance = async (
   // Choose the baseURL based on the endpoint parameter
   const baseURL = process.env.NEXT_PUBLIC_REST_API_ENDPOINT
 
+  // Type assertion to access custom token property from extended Session type
+  const userToken = (session?.user as Session["user"] & { token?: string })?.token
+
   return axios.create({
     baseURL: baseURL,
     timeout: 50000,
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
-      Authorization: `Bearer ${session?.user?.token}`,
+      Authorization: `Bearer ${userToken || ""}`,
     },
   })
 }
