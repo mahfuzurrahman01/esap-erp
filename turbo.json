@@ -1,29 +1,50 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "!.next/cache/**"
+      ],
       "env": [
         "NEXTAUTH_SECRET",
         "NEXTAUTH_URL",
-        "NEXT_PUBLIC_GOOGLE_MAP_API_KEY"
+        "NEXT_PUBLIC_GOOGLE_MAP_API_KEY",
+        "NEXT_PUBLIC_REST_API_ENDPOINT",
+        "NEXT_PUBLIC_REST_API_ENDPOINT_FMS",
+        "NEXT_PUBLIC_REST_API_ENDPOINT_HRMS",
+        "NEXT_PUBLIC_REST_API_ENDPOINT_CRM",
+        "NEXT_PUBLIC_REST_API_ENDPOINT_SCM",
+        "NEXT_PUBLIC_MASTRA_API_URL",
+        "SKIP_ENV_VALIDATION"
       ]
     },
     "lint": {},
     "start": {
-      "dependsOn": ["^start"]
+      "dependsOn": [
+        "^start"
+      ]
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
     "clean": {
-      "dependsOn": ["^clean"]
+      "dependsOn": [
+        "^clean"
+      ]
     },
     "cache:clean": {
-      "dependsOn": ["^cache:clean"]
+      "dependsOn": [
+        "^cache:clean"
+      ]
     },
     "gen-icons": {
       "cache": false

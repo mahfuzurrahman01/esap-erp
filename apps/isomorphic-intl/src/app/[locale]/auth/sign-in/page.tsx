@@ -12,8 +12,7 @@ import SignInForm from "@/components/container/auth/sign-in-form"
 import { Button } from "@/components/ui"
 import { routes } from "@/config/routes"
 import { useGoogleLogin } from "@/hooks/auth/use-auth"
-import { useSearchParams } from "next/navigation"
-import { useEffect } from "react"
+
 
 // export const metadata = {
 //   ...metaObject("Sign In"),
@@ -55,10 +54,7 @@ export default function SignIn() {
         className="border-gray-500/20 text-xs"
         isCenter
       />
-      <div className="my-4 flex flex-col items-start space-y-2">
-        <span>Email: yasirarafat8856@gmail.com</span>
-        <span>Password: Password@001</span>
-      </div>
+
       <SignInForm />
     </AuthWrapperFive>
   )

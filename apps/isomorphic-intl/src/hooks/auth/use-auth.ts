@@ -30,48 +30,45 @@ export function useLogin() {
 
   return useMutation({
     mutationFn: async (data: LoginInput) => {
-      // MVP Fix: Call backend API first - if it succeeds, we're good
-      const apiResponse = await AuthService.login(data)
-      
-      // Try to establish NextAuth session in background (non-blocking)
-      // Don't throw error if NextAuth fails - backend already authenticated
-      signIn("credentials", {
+      // Use NextAuth signIn as the single auth mechanism.
+      // This calls the authorize() callback in auth.ts, which internally
+      // calls AuthService.login() — so the backend is still called, but
+      // NextAuth also establishes the session cookie in the same request.
+      const result = await signIn("credentials", {
         ...data,
         redirect: false,
-      }).catch((error) => {
-        // Silently handle NextAuth errors - backend auth already succeeded
-        console.warn("NextAuth session establishment failed (non-critical):", error)
       })
-      
-      return apiResponse
+
+      if (result?.error) {
+        throw new Error(result.error)
+      }
+
+      if (!result?.ok) {
+        throw new Error("Authentication failed")
+      }
+
+      return result
     },
-    onSuccess: async () => {
+    onSuccess: () => {
       toast.success(t("form-user-successfully-logged-in"))
-      
-      // MVP Fix: Give NextAuth time to establish session, then force redirect
-      // Use longer delay to ensure session cookie is set
-      await new Promise((resolve) => setTimeout(resolve, 500))
-      
+
       // Get callbackUrl from query params or default to dashboard
       const searchParams = new URLSearchParams(window.location.search)
       let callbackUrl = searchParams.get("callbackUrl") || `/${locale}`
-      
-      // Ensure callbackUrl has locale prefix if it doesn't start with /
+
+      // Ensure callbackUrl has locale prefix
       if (!callbackUrl.startsWith("/")) {
         callbackUrl = `/${locale}/${callbackUrl}`
       } else if (!callbackUrl.startsWith(`/${locale}`)) {
-        // If it starts with / but doesn't have locale, add it
         callbackUrl = `/${locale}${callbackUrl === "/" ? "" : callbackUrl}`
       }
-      
-      // MVP Fix: Use replace instead of href to avoid back button issues
-      // Force full page reload to ensure middleware recognizes session
+
+      // Force full page reload to ensure middleware recognizes the new session
       window.location.replace(callbackUrl)
     },
     onError: (error: any) => {
-      // //console.log('error?.response?.data', error?.response?.data)
       const outputMsg =
-        error?.response?.data?.details || "Authentication failed"
+        error?.message || error?.response?.data?.details || "Authentication failed"
       throw new Error(outputMsg)
     },
   })

@@ -4,10 +4,9 @@ import { createEnv } from "@t3-oss/env-nextjs";
 export const env = createEnv({
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
-    NEXTAUTH_SECRET:
-      process.env.NODE_ENV === "production" ? z.string().min(1) : z.string().min(1).optional(),
-    NEXTAUTH_URL: z.string().url(),
-    NEXT_PUBLIC_API_ENDPOINT: z.string().url(),
+    NEXTAUTH_SECRET: z.string().min(1),
+    // NEXTAUTH_URL is auto-set by Vercel, so make it optional
+    NEXTAUTH_URL: z.string().url().optional(),
     NEXT_PUBLIC_REST_API_ENDPOINT: z.string().url(),
     // Optional email config
     SMTP_HOST: z.string().optional(),
@@ -23,5 +22,8 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_NAME: z.string().optional(),
     NEXT_PUBLIC_GOOGLE_MAP_API_KEY: z.string().optional(),
   },
-  runtimeEnv: process.env, // Ensure this reads the environment variables correctly
+  runtimeEnv: process.env,
+  // Skip validation during build on Vercel (env vars may not be available)
+  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });
+

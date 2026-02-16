@@ -4,8 +4,8 @@ const withNextIntl = createNextIntlPlugin()
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "standalone",
   images: {
-    domains: ["res.cloudinary.com", "esapdev.site", "isomorphic-furyroad.s3.amazonaws.com"],
     remotePatterns: [
       {
         protocol: "http",
@@ -20,21 +20,18 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "esapdev.site",
-        pathname: "/profile_pictures/**",
+        pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "esapdev.site",
-      },
-      {
-        protocol: "https",
-        hostname: "esapdev.site",
-        pathname: "/profile_pictures/**",
+        hostname: "isomorphic-furyroad.s3.amazonaws.com",
+        pathname: "/**",
       },
     ],
   },
   reactStrictMode: true,
   transpilePackages: ["core"],
+  serverExternalPackages: ["sharp", "@react-pdf/renderer", "nodemailer"],
 }
 
 export default withNextIntl(nextConfig)

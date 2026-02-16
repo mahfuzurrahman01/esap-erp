@@ -1,0 +1,11 @@
+{
+    "buildCommand": "cd ../.. && npx turbo build --filter=intl",
+    "outputDirectory": ".next",
+    "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
+    "framework": "nextjs",
+    "functions": {
+        "app/**/*.js": {
+            "maxDuration": 30
+        }
+    }
+}
