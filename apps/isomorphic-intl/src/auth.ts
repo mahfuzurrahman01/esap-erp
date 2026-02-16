@@ -91,9 +91,27 @@ const auth: AuthOptions = {
         email: { type: "email" },
         password: { type: "password" },
         twoFactorCode: { type: "twoFactorCode" },
+        prefetchedUserData: { type: "text" },
       },
-      async authorize(credentials) {
-        if (!credentials?.email || !credentials.password) {
+      async authorize(credentials): Promise<any> {
+        if (!credentials?.email) {
+          throw new Error("Invalid credentials")
+        }
+
+        // If the client already called the backend API and passed the result,
+        // use it directly — avoids server-side API call connectivity issues
+        if (credentials.prefetchedUserData) {
+          try {
+            const userData = JSON.parse(credentials.prefetchedUserData)
+            return userData
+          } catch (e) {
+            console.error("Failed to parse prefetched user data:", e)
+            throw new Error("Authentication failed")
+          }
+        }
+
+        // Fallback: call backend API from server (may not work in all environments)
+        if (!credentials.password) {
           throw new Error("Invalid credentials")
         }
 

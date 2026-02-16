@@ -30,12 +30,32 @@ export function useLogin() {
 
   return useMutation({
     mutationFn: async (data: LoginInput) => {
-      // Use NextAuth signIn as the single auth mechanism.
-      // This calls the authorize() callback in auth.ts, which internally
-      // calls AuthService.login() — so the backend is still called, but
-      // NextAuth also establishes the session cookie in the same request.
+      // Step 1: Call the backend API from the client (this works reliably)
+      const apiResponse = await AuthService.login(data)
+
+      if (!apiResponse || !apiResponse.token) {
+        throw new Error("Authentication failed")
+      }
+
+      // Step 2: Build the user object that NextAuth expects
+      const userData = {
+        id: apiResponse.data.userId,
+        email: apiResponse.data.applicationUser.email,
+        name:
+          apiResponse.data.firstName ||
+          apiResponse.data.applicationUser.username,
+        token: apiResponse.token,
+        avatar: apiResponse.data.profilePicturePath || "",
+        roles: apiResponse.data.roles || [],
+        permissions: [],
+      }
+
+      // Step 3: Pass the pre-fetched user data to NextAuth's signIn()
+      // The authorize callback will parse this and return it directly,
+      // avoiding a second (server-side) API call that may time out
       const result = await signIn("credentials", {
-        ...data,
+        email: data.email,
+        prefetchedUserData: JSON.stringify(userData),
         redirect: false,
       })
 
@@ -68,7 +88,9 @@ export function useLogin() {
     },
     onError: (error: any) => {
       const outputMsg =
-        error?.message || error?.response?.data?.details || "Authentication failed"
+        error?.message ||
+        error?.response?.data?.details ||
+        "Authentication failed"
       throw new Error(outputMsg)
     },
   })
@@ -155,14 +177,14 @@ export function useGoogleLogin() {
         // Get callbackUrl from query params or default to dashboard
         const searchParams = new URLSearchParams(window.location.search)
         let callbackUrl = searchParams.get("callbackUrl") || `/${locale}`
-        
+
         // Ensure callbackUrl has locale prefix
         if (!callbackUrl.startsWith("/")) {
           callbackUrl = `/${locale}/${callbackUrl}`
         } else if (!callbackUrl.startsWith(`/${locale}`)) {
           callbackUrl = `/${locale}${callbackUrl === "/" ? "" : callbackUrl}`
         }
-        
+
         // MVP Fix: Use replace instead of href to avoid back button issues
         window.location.replace(callbackUrl)
       }
