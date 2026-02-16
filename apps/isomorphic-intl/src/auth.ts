@@ -58,12 +58,26 @@ const auth: AuthOptions = {
       return token
     },
     async redirect({ url, baseUrl }) {
-      // If url is a relative path, resolve it against baseUrl
-      if (url.startsWith("/")) return `${baseUrl}${url}`
-      // If url is on the same origin, allow it
-      if (new URL(url).origin === baseUrl) return url
-      // Otherwise, redirect to baseUrl
-      return baseUrl
+      // MVP Fix: Handle redirect more gracefully
+      try {
+        // If url is a relative path, resolve it against baseUrl
+        if (url.startsWith("/")) {
+          // Ensure locale is preserved in redirect
+          const redirectUrl = `${baseUrl}${url}`
+          return redirectUrl
+        }
+        // If url is on the same origin, allow it
+        if (url.startsWith("http")) {
+          const urlObj = new URL(url)
+          if (urlObj.origin === baseUrl) return url
+        }
+        // Default: redirect to baseUrl (dashboard)
+        return baseUrl
+      } catch (error) {
+        // Fallback to baseUrl if any error occurs
+        console.warn("Redirect callback error:", error)
+        return baseUrl
+      }
     },
   },
   providers: [
@@ -112,7 +126,7 @@ const auth: AuthOptions = {
         }
       },
     }),
-  ],
+  ] as AuthOptions["providers"],
   session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days
