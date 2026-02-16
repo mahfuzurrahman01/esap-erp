@@ -1,0 +1,76 @@
+{
+  "profitAndLoss": {
+    "revenue": {
+      "id": "5000",
+      "name": "Income",
+      "amount": 363000.00,
+      "children": [
+        {
+          "id": "5100",
+          "name": "Direct Income",
+          "amount": 363000.00,
+          "children": [
+            {
+              "id": "5110",
+              "name": "Sales",
+              "amount": 363000.00
+            }
+          ]
+        }
+      ]
+    },
+    "expenses": {
+      "id": "6000",
+      "name": "Expenses",
+      "amount": 253760.00,
+      "children": [
+        {
+          "id": "6100",
+          "name": "Direct Expenses",
+          "amount": 253760.00,
+          "children": [
+            {
+              "id": "6110",
+              "name": "Stock Expenses",
+              "amount": 253760.00,
+              "children": [
+                {
+                  "id": "6111",
+                  "name": "Cost of Goods Sold",
+                  "amount": 253760.00
+                },
+                {
+                  "id": "6112",
+                  "name": "Expenses Included In Valuation",
+                  "amount": 0.00
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6200",
+          "name": "Indirect Expenses",
+          "amount": 0.00,
+          "children": [
+            {
+              "id": "6210",
+              "name": "Gain/Loss on Asset Disposal",
+              "amount": 0.00
+            },
+            {
+              "id": "6220",
+              "name": "Salary",
+              "amount": 0.00
+            }
+          ]
+        }
+      ]
+    },
+    "netIncome": {
+      "id": "7000",
+      "name": "Profit for the year",
+      "amount": 109240.00
+    }
+  }
+}

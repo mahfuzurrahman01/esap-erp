@@ -1,0 +1,148 @@
+"use client"
+
+import WidgetCard from "@core/components/cards/widget-card"
+import { useDirection } from "@core/hooks/use-direction"
+import { DndContext, closestCenter } from "@dnd-kit/core"
+import { restrictToHorizontalAxis } from "@dnd-kit/modifiers"
+
+import ApiTablePaginationScm from "@/components/base/api-table-pagination-scm"
+import MainTable from "@/components/base/table/main-table"
+import {
+  DragAbleCellWrapper,
+  DragAbleHeadWrapper,
+} from "@/components/container/tan-table/custom-table-components"
+import { useTanStackTable } from "@/components/container/tan-table/custom-table-components/use-tanstack-table"
+import { useQueryParams } from "@/hooks/use-query-params"
+import {
+  useBulkDeleteMaterialRequirementsPlanning,
+  useDeleteMaterialRequirementsPlanning,
+  useMaterialRequirementsPlanningList,
+} from "@/modules/scm/hooks/production-control/material-availibility/use-material-requirements-planning"
+import { useTableDelete } from "@/modules/scm/hooks/use-table-delete"
+import {
+  MaterialRequirementsPlanning,
+  MaterialRequirementsPlanningQueryOptions,
+} from "@/modules/scm/types/production-control/materials-requirements-planning/material-requirements-planning-types"
+
+import MaterialAvailabilityTableToolbar from "./materials-availibility-table-toolbar"
+import { useMaterialAvailabilityColumn } from "./use-column"
+
+export default function MaterialAvailabilityList() {
+  const { direction } = useDirection()
+  const columns = useMaterialAvailabilityColumn()
+
+  const deleteMaterialAvailability = useDeleteMaterialRequirementsPlanning()
+  const bulkDeleteMaterialAvailability =
+    useBulkDeleteMaterialRequirementsPlanning()
+
+  const { params, updateParams } =
+    useQueryParams<MaterialRequirementsPlanningQueryOptions>({
+      params: [
+        {
+          key: "search",
+          defaultValue: "",
+          parse: (value) => value || "",
+        },
+        {
+          key: "pageIndex",
+          defaultValue: 1,
+          parse: (value) => Number(value) || 1,
+        },
+        {
+          key: "pageSize",
+          defaultValue: 10,
+          parse: (value) => Number(value) || 10,
+        },
+        {
+          key: "approvalStatus",
+          defaultValue: "",
+          parse: (value) => value || "",
+        },
+      ],
+    })
+
+  const { data, isLoading } = useMaterialRequirementsPlanningList({
+    search: params.search,
+    pageIndex: params.pageIndex,
+    pageSize: params.pageSize,
+    approvalStatus: params.approvalStatus,
+  })
+
+  const { table, setData, sensors, handleDragEndColumn, columnOrder } =
+    useTanStackTable<MaterialRequirementsPlanning>({
+      tableData: data?.data ?? [],
+      columnConfig: columns,
+      options: {
+        initialState: {
+          columnPinning: {
+            left: ["id"],
+            right: ["action"],
+          },
+        },
+        enableRowSelection: true,
+        columnResizeDirection: direction as any,
+        columnResizeMode: "onChange",
+        enableColumnResizing: true,
+        onStateChange: (updater) => {
+          if ("data" in updater) {
+            table.resetRowSelection()
+          }
+        },
+      },
+    })
+
+  const { handleDeleteRow, handleMultipleDelete } =
+    useTableDelete<MaterialRequirementsPlanning>({
+      deleteMutation: deleteMaterialAvailability.mutate,
+      bulkDeleteMutation: bulkDeleteMaterialAvailability.mutate,
+      setData,
+      resetRowSelection: table.resetRowSelection,
+    })
+
+  // Update table options with delete handlers
+  table.options.meta = {
+    ...table.options.meta,
+    handleDeleteRow,
+    handleMultipleDelete,
+  }
+
+  return (
+    <>
+      <WidgetCard
+        rounded="xl"
+        className="card-shadow flex flex-col gap-4 border-none bg-paper dark:bg-paper">
+        <MaterialAvailabilityTableToolbar
+          table={table}
+          params={params}
+          updateParams={updateParams}
+        />
+        <DndContext
+          collisionDetection={closestCenter}
+          modifiers={[restrictToHorizontalAxis]}
+          onDragEnd={handleDragEndColumn}
+          sensors={sensors}>
+          <MainTable
+            table={table}
+            variant={"modern"}
+            isLoading={
+              isLoading ||
+              deleteMaterialAvailability.isPending ||
+              bulkDeleteMaterialAvailability.isPending
+            }
+            columnOrder={columnOrder}
+            components={{
+              headerCell: DragAbleHeadWrapper,
+              bodyCell: DragAbleCellWrapper,
+            }}
+          />
+        </DndContext>
+        <ApiTablePaginationScm
+          table={table}
+          params={params}
+          count={data?.count || 0}
+          updateParams={updateParams}
+        />
+      </WidgetCard>
+    </>
+  )
+}

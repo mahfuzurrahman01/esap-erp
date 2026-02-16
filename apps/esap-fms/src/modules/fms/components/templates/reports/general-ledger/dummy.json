@@ -1,0 +1,156 @@
+{
+  "generalLedger": {
+    "entries": [
+      {
+        "id": "1",
+        "postingDate": "03-01-2025",
+        "account": "Creditors - BD",
+        "debit": 0.0,
+        "credit": 40293.0,
+        "balance": -40293.0,
+        "voucherType": "Purchase Invoice",
+        "voucherNo": "ACC-PINV-2025-00003"
+      },
+      {
+        "id": "2",
+        "postingDate": "03-01-2025",
+        "account": "Stock In Hand - BD",
+        "debit": 40293.0,
+        "credit": 0.0,
+        "balance": 0.0,
+        "voucherType": "Purchase Invoice",
+        "voucherNo": "ACC-PINV-2025-00003"
+      },
+      {
+        "id": "3",
+        "postingDate": "10-01-2025",
+        "account": "Creditors - BD",
+        "debit": 0.0,
+        "credit": 39000.0,
+        "balance": -39000.0,
+        "voucherType": "Purchase Invoice",
+        "voucherNo": "ACC-PINV-2025-00001"
+      },
+      {
+        "id": "4",
+        "postingDate": "10-01-2025",
+        "account": "Stock In Hand - BD",
+        "debit": 39000.0,
+        "credit": 0.0,
+        "balance": 0.0,
+        "voucherType": "Purchase Invoice",
+        "voucherNo": "ACC-PINV-2025-00001"
+      },
+      {
+        "id": "5",
+        "postingDate": "10-01-2025",
+        "account": "Creditors - BD",
+        "debit": 0.0,
+        "credit": 71250.0,
+        "balance": -71250.0,
+        "voucherType": "Purchase Invoice",
+        "voucherNo": "ACC-PINV-2025-00004"
+      },
+      {
+        "id": "6",
+        "postingDate": "10-01-2025",
+        "account": "Stock In Hand - BD",
+        "debit": 71250.0,
+        "credit": 0.0,
+        "balance": 0.0,
+        "voucherType": "Purchase Invoice",
+        "voucherNo": "ACC-PINV-2025-00004"
+      },
+      {
+        "id": "7",
+        "postingDate": "10-01-2025",
+        "account": "Creditors - BD",
+        "debit": 71250.0,
+        "credit": 0.0,
+        "balance": 71250.0,
+        "voucherType": "Payment Entry",
+        "voucherNo": "ACC-PAY-2025-00002"
+      },
+      {
+        "id": "8",
+        "postingDate": "10-01-2025",
+        "account": "Bank Account - BD",
+        "debit": 0.0,
+        "credit": 71250.0,
+        "balance": 0.0,
+        "voucherType": "Payment Entry",
+        "voucherNo": "ACC-PAY-2025-00002"
+      },
+      {
+        "id": "9",
+        "postingDate": "21-01-2025",
+        "account": "Creditors - BD",
+        "debit": 0.0,
+        "credit": 53200.0,
+        "balance": -53200.0,
+        "voucherType": "Purchase Invoice",
+        "voucherNo": "ACC-PINV-2025-00002"
+      },
+      {
+        "id": "10",
+        "postingDate": "21-01-2025",
+        "account": "Stock In Hand - BD",
+        "debit": 53200.0,
+        "credit": 0.0,
+        "balance": 0.0,
+        "voucherType": "Purchase Invoice",
+        "voucherNo": "ACC-PINV-2025-00002"
+      },
+      {
+        "id": "11",
+        "postingDate": "21-01-2025",
+        "account": "Creditors - BD",
+        "debit": 53200.0,
+        "credit": 0.0,
+        "balance": 53200.0,
+        "voucherType": "Payment Entry",
+        "voucherNo": "ACC-PAY-2025-00001"
+      },
+      {
+        "id": "12",
+        "postingDate": "21-01-2025",
+        "account": "Bank Account - BD",
+        "debit": 0.0,
+        "credit": 53200.0,
+        "balance": 0.0,
+        "voucherType": "Payment Entry",
+        "voucherNo": "ACC-PAY-2025-00001"
+      }
+    ],
+    "opening": {
+      "id": "",
+      "postingDate": "",
+      "account": "Opening",
+      "debit": 0.0,
+      "credit": 0.0,
+      "balance": 0.0,
+      "voucherType": "",
+      "voucherNo": ""
+    },
+    "total": {
+      "id": "",
+      "postingDate": "",
+      "account": "Total",
+      "debit": 328193.0,
+      "credit": 328193.0,
+      "balance": 0.0,
+      "voucherType": "",
+      "voucherNo": ""
+    },
+    "closing": {
+      "id": "",
+      "postingDate": "",
+      "account": "Closing (Opening + Total)",
+      "debit": 328193.0,
+      "credit": 328193.0,
+      "balance": 0.0,
+      "voucherType": "",
+      "voucherNo": ""
+    }
+  }
+}

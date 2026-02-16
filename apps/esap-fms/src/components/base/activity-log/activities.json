@@ -1,0 +1,22 @@
+[
+    {
+      "user": "Administrator",
+      "action": "last edited this",
+      "time": "2025-02-03T12:00:00Z"
+    },
+    {
+      "user": "You",
+      "action": "submitted this document",
+      "time": "2023-09-01T12:00:00Z"
+    },
+    {
+      "user": "You",
+      "action": "changed the value of Status from Draft to Submitted",
+      "time": "2023-09-01T11:00:00Z"
+    },
+    {
+      "user": "You",
+      "action": "created this",
+      "time": "2023-09-01T10:00:00Z"
+    }
+  ]

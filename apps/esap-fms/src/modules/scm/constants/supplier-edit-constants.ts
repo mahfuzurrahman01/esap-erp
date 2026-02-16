@@ -1,0 +1,56 @@
+import { SupplierUpdateInput } from "../types/procurement/supplier/supplier-types";
+
+
+
+
+
+export const SUPPLIER_EDIT_FORM_VALUES: SupplierUpdateInput = {
+  id: 0,
+  firstName: "",
+  middleName: "",
+  lastName: "",
+  companyName: "",
+  companyWebsite: "",
+  companyAddress: "",
+  street: "",
+  city: "",
+  state: "",
+  zipCode: "",
+  contactNumber: "",
+  contactEmail: "",
+  supplierCategoryId: 0,
+  countryId: 0,
+  countryName: "",
+  avatarFile: "",
+  updateSupplierLegalInformationDto: {
+    id: 0,
+    businessLicenseNumber: "",
+    taxIdentificationNumber: "",
+    ksaTaxClassification: "",
+    vatRegistrationNumber: "",
+    zakatCertificateFile: "",
+    complianceCertificationFile: "",
+    insuranceCertificateFile: "",
+    antiCorruptionCompliance: false,
+    ethicalSourcingAgreement: false,
+    supplierCodeOfConductAgreement: false,
+    legalRepresentativeDetails: "",
+    commercialRegistration: "",
+    dunsNumber: "",
+  },
+  updateSupplierBankAccountDetailDto: {
+    id: 0,
+    bankName: "",
+    branchName: "",
+    accountHolderName: "",
+    accountNumber: "",
+    address: "",
+    routingNumber: "",
+    accountVerificationFile: "",
+    paymentTermsId: 0,
+    countryId: 0,
+    countryName: "",
+    currencyId: 0,
+    currencyName: "",
+  },
+}

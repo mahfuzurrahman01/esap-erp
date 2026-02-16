@@ -1,0 +1,90 @@
+"use client"
+
+import { useState, useTransition } from "react"
+
+import SAFlagIcon from "@core/components/icons/language/SAFlag"
+import USFlagIcon from "@core/components/icons/language/USFlag"
+import cn from "@core/utils/class-names"
+import { useLocale } from "next-intl"
+import { IconType } from "react-icons/lib"
+import { Select } from "rizzui"
+
+import { Locale, usePathname, useRouter } from "@/i18n/routing"
+
+type LocaleOptionsType = {
+  label: string
+  value: Locale
+  icon: IconType
+}
+
+const localeOptions = [
+  {
+    label: "English - EN",
+    value: "en",
+    icon: USFlagIcon,
+  },
+  {
+    label: "عربى - AR",
+    value: "ar",
+    icon: SAFlagIcon,
+  },
+]
+
+export default function LanguageSwitcher({
+  className,
+  iconClassName,
+}: {
+  className?: string
+  iconClassName?: string
+}) {
+  const router = useRouter()
+  const locale = useLocale()
+  const pathname = usePathname()
+  const [_, startTransition] = useTransition()
+  const selectedLocale = localeOptions.filter(
+    (item) => item.value.toLowerCase() === locale.toLowerCase()
+  )
+  const [selected, setSelected] = useState(selectedLocale[0])
+
+  function handleChange(op: LocaleOptionsType) {
+    setSelected(op)
+    startTransition(() => {
+      router.replace(`${pathname}`, { locale: op.value })
+    })
+  }
+
+  return (
+    <Select
+      size="sm"
+      value={selected}
+      className={cn("w-auto", className)}
+      placement="bottom-end"
+      onChange={handleChange}
+      options={localeOptions}
+      suffixClassName={iconClassName}
+      suffix={null}
+      selectClassName="rounded-md border-transparent hover:border-transparent bg-paper backdrop-blur-md font-semibold text-sm text-title ring-0 focus:ring-0 focus:ring-transparent focus:border-transparent h-9"
+      dropdownClassName="w-40 font-medium [&_li]:justify-center [&_li]:text-sm dropdown-gr border-none dark:bg-paper"
+      optionClassName="data-[focus]:bg-gray-500/10"
+      displayValue={(op: LocaleOptionsType) => renderDisplayValue(op)}
+      getOptionDisplayValue={(op: LocaleOptionsType) =>
+        renderOptionDisplayValue(op)
+      }
+    />
+  )
+}
+
+function renderDisplayValue(op: LocaleOptionsType) {
+  const Icon = op.icon
+  return <>{Icon && <Icon className="size-5" />}</>
+}
+
+function renderOptionDisplayValue(op: LocaleOptionsType) {
+  const Icon = op.icon
+  return (
+    <div className="flex items-center gap-3 text-title">
+      {Icon && <Icon className="size-5" />}
+      <span>{op.label}</span>
+    </div>
+  )
+}

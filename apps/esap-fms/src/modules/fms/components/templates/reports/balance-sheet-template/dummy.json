@@ -1,0 +1,161 @@
+{
+  "balanceSheet": {
+    "assets": {
+      "id": "1",
+      "name": "Application of Funds (Assets)",
+      "amount": 102487.55,
+      "children": [
+        {
+          "id": "2",
+          "name": "Current Assets",
+          "amount": 5467.00,
+          "children": [
+            {
+              "id": "3",
+              "name": "Accounts Receivable",
+              "amount": 251000.00,
+              "children": [
+                {
+                  "id": "4",
+                  "name": "Debtors",
+                  "amount": 251000.00
+                }
+              ]
+            },
+            {
+              "id": "5",
+              "name": "Bank Accounts",
+              "amount": 385154.00,
+              "children": [
+                {
+                  "id": "6",
+                  "name": "Bank Account",
+                  "amount": 385154.00
+                }
+              ]
+            },
+            {
+              "id": "7",
+              "name": "Cash In Hand",
+              "amount": 33000.00,
+              "children": [
+                {
+                  "id": "8",
+                  "name": "Cash",
+                  "amount": 33000.00
+                }
+              ]
+            },
+            {
+              "id": "9",
+              "name": "Stock Assets",
+              "amount": 95687.00,
+              "children": [
+                {
+                  "id": "10",
+                  "name": "Stock In Hand",
+                  "amount": 95687.00
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "11",
+          "name": "Fixed Assets",
+          "amount": 87020.55,
+          "children": [
+            {
+              "id": "12",
+              "name": "Accumulated Depreciation",
+              "amount": 7979.45
+            },
+            {
+              "id": "13",
+              "name": "CWIP Account",
+              "amount": 5000.00
+            },
+            {
+              "id": "14",
+              "name": "Electronic Equipment",
+              "amount": 100000.00
+            }
+          ]
+        },
+        {
+          "id": "15",
+          "name": "Temporary Accounts",
+          "amount": 10000.00,
+          "children": [
+            {
+              "id": "16",
+              "name": "Temporary Opening",
+              "amount": 10000.00
+            }
+          ]
+        }
+      ]
+    },
+    "liabilities": {
+      "id": "19",
+      "name": "Source of Funds (Liabilities)",
+      "amount": 8393.00,
+      "children": [
+        {
+          "id": "20",
+          "name": "Current Liabilities",
+          "amount": 8393.00,
+          "children": [
+            {
+              "id": "21",
+              "name": "Accounts Payable",
+              "amount": 9893.00,
+              "children": [
+                {
+                  "id": "22",
+                  "name": "Creditors",
+                  "amount": 9893.00
+                }
+              ]
+            },
+            {
+              "id": "23",
+              "name": "Stock Liabilities",
+              "amount": 1500.00,
+              "children": [
+                {
+                  "id": "24",
+                  "name": "Stock Received But Not Billed",
+                  "amount": 1500.00
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "equity": {
+      "id": "27",
+      "name": "Equity",
+      "amount": 35000.00,
+      "children": [
+        {
+          "id": "28",
+          "name": "Opening Balance Equity",
+          "amount": 35000.00
+        }
+      ]
+    },
+    "provisionalProfitLoss": {
+      "id": "31",
+      "name": "Provisional Profit / Loss (Credit)",
+      "amount": 75880.55
+    },
+    "total": {
+      "id": "32",
+      "name": "Total (Credit)",
+      "amount": 102487.55
+    }
+  }
+}
+

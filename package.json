@@ -1,0 +1,48 @@
+{
+  "name": "isomorphic",
+  "version": "7.3.0",
+  "description": "A nextjs template to build dashboard",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "build": "turbo build",
+    "start": "turbo start",
+    "clean": "turbo clean && rm -rf node_modules .turbo",
+    "cache:clean": "turbo cache:clean && rm -rf .turbo",
+    "fm:dev": "turbo dev --filter=fm",
+    "fm:lint": "turbo lint --filter=fm",
+    "fm:build": "turbo build --filter=fm",
+    "fm:start": "turbo start --filter=fm",
+    "fm:clean": "turbo clean --filter=fm",
+    "intl:dev": "turbo dev --filter=intl",
+    "intl:lint": "turbo lint --filter=intl",
+    "intl:build": "turbo build --filter=intl",
+    "intl:start": "turbo start --filter=intl",
+    "intl:clean": "turbo clean --filter=intl",
+    "gen-icons": "turbo gen-icons --filter=core",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@types/papaparse": "^5.3.15",
+    "eslint": "9.18.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "turbo": "2.5.0",
+    "typescript-config": "workspace:*"
+  },
+  "packageManager": "pnpm@9.15.3",
+  "engines": {
+    "node": ">=22"
+  },
+  "lint-staged": {
+    "apps/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "apps/**/*.{js,jsx,ts,tsx,json,css,scss}": [
+      "prettier --write"
+    ]
+  }
+}

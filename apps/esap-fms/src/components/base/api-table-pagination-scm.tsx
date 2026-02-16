@@ -1,0 +1,144 @@
+import { type Table as ReactTableType } from "@tanstack/react-table"
+import { useTranslations } from "next-intl"
+import { ActionIcon, Select, SelectOption, Text } from "rizzui"
+
+import { DEFAULT_QUERY_PARAMS } from "@/config/constants"
+import { EmployeeQueryOptions } from "@/types/hrms/employee/employee.types"
+
+import CaretDoubleLeftIcon from "../icons/caret-double-left"
+import CaretDoubleRightIcon from "../icons/caret-double-right"
+import CaretLeftIcon from "../icons/caret-left"
+import CaretRightIcon from "../icons/caret-right"
+
+export default function ApiTablePaginationScm<
+  TData extends Record<string, any>,
+>({
+  table,
+  params = DEFAULT_QUERY_PARAMS,
+  count,
+  updateParams,
+}: {
+  table: ReactTableType<TData>
+  params: EmployeeQueryOptions
+  count: number
+  updateParams: (params: Partial<EmployeeQueryOptions>) => void
+}) {
+  const t = useTranslations("table")
+
+  const options = [
+    { value: 5, label: t("table-text-rows-per-page-5") },
+    { value: 10, label: t("table-text-rows-per-page-10") },
+    { value: 15, label: t("table-text-rows-per-page-15") },
+    { value: 20, label: t("table-text-rows-per-page-20") },
+  ]
+
+  const getOptionLabel = (value: number) => {
+    return (
+      options.find((option) => option.value === value)?.label ||
+      value.toString()
+    )
+  }
+
+  const mergedParams = { ...DEFAULT_QUERY_PARAMS, ...params } // Merge params with DEFAULT_QUERY_PARAMS
+
+  const totalPages = Math.ceil(count / mergedParams.pageSize!)
+
+  const isPreviousPagesDisabled = mergedParams.pageIndex === 1
+  const isNextPagesDisabled =
+    mergedParams.pageIndex === totalPages || totalPages === 0
+
+  const handlePageSizeChange = (value: SelectOption) => {
+    updateParams({ pageSize: Number(value.value) })
+  }
+
+  const handleFirstPage = () => {
+    updateParams({ pageIndex: 1 })
+  }
+
+  const handlePreviousPage = () => {
+    updateParams({ pageIndex: mergedParams.pageIndex! - 1 })
+  }
+
+  const handleNextPage = () => {
+    updateParams({ pageIndex: mergedParams.pageIndex! + 1 })
+  }
+
+  const handleLastPage = () => {
+    updateParams({ pageIndex: totalPages })
+  }
+
+  return (
+    <div className="flex w-full items-center justify-between px-5 @container">
+      <div className="hidden @2xl:block">
+        <Text className="dark:text-title">
+          {table.getFilteredSelectedRowModel().rows.length} {t("table-text-of")}{" "}
+          {table.getFilteredRowModel().rows.length}{" "}
+          {t("table-text-row-selected")}.
+        </Text>
+      </div>
+      <div className="flex w-full items-center justify-between gap-6 @2xl:w-auto @2xl:gap-12">
+        <div className="flex items-center gap-4">
+          <Text className="hidden font-medium text-title @md:block dark:text-gray-0">
+            {t("table-text-rows-per-page")}
+          </Text>
+          <Select
+            options={options}
+            className="w-[70px]"
+            value={mergedParams.pageSize}
+            onChange={(v: SelectOption) => {
+              table.setPageSize(Number(v.value))
+              handlePageSizeChange(v)
+            }}
+            displayValue={getOptionLabel}
+            selectClassName="border-gray-500/20 rounded-lg font-semibold text-sm text-title ring-0 shadow-sm h-9"
+            dropdownClassName="font-medium [&_li]:justify-center [&_li]:text-sm dropdown-gr border-none dark:bg-paper"
+            optionClassName="data-[focus]:bg-gray-500/10"
+          />
+        </div>
+        <Text className="hidden font-medium text-gray-900 @3xl:block dark:text-title">
+          {t("table-text-page")} {mergedParams.pageIndex} {t("table-text-of")}{" "}
+          {totalPages}
+        </Text>
+        <div className="grid grid-cols-4 gap-2">
+          <ActionIcon
+            rounded="lg"
+            variant="outline"
+            aria-label="Go to first page"
+            onClick={handleFirstPage}
+            disabled={isPreviousPagesDisabled}
+            className="border-transparent text-title hover:border-transparent hover:bg-gray-500/10 hover:text-title disabled:border-transparent disabled:bg-transparent disabled:text-gray-500/80 dark:text-title dark:hover:bg-gray-500/10 dark:hover:text-title dark:disabled:text-gray-500/80 dark:disabled:hover:bg-transparent">
+            <CaretDoubleLeftIcon className="size-5" />
+          </ActionIcon>
+
+          <ActionIcon
+            rounded="lg"
+            variant="outline"
+            aria-label="Go to previous page"
+            onClick={handlePreviousPage}
+            disabled={isPreviousPagesDisabled}
+            className="dark:disabled:text-gray border-transparent text-title hover:border-transparent hover:bg-gray-500/10 hover:text-title disabled:border-transparent disabled:bg-transparent disabled:text-gray-500/80 dark:text-title dark:hover:bg-gray-500/10 dark:hover:text-title dark:disabled:text-gray-500/80 dark:disabled:hover:bg-transparent">
+            <CaretLeftIcon className="size-5" />
+          </ActionIcon>
+          <ActionIcon
+            rounded="lg"
+            variant="outline"
+            aria-label="Go to next page"
+            onClick={handleNextPage}
+            disabled={isNextPagesDisabled}
+            className="dark:disabled:text-gray border-transparent text-title hover:border-transparent hover:bg-gray-500/10 hover:text-title disabled:border-transparent disabled:bg-transparent disabled:text-gray-500/80 dark:text-title dark:hover:bg-gray-500/10 dark:hover:text-title dark:disabled:text-gray-500/80 dark:disabled:hover:bg-transparent">
+            <CaretRightIcon className="size-5" />
+          </ActionIcon>
+          <ActionIcon
+            rounded="lg"
+            variant="outline"
+            aria-label="Go to last page"
+            onClick={handleLastPage}
+            disabled={isNextPagesDisabled}
+            className="dark:disabled:text-gray border-transparent text-title hover:border-transparent hover:bg-gray-500/10 hover:text-title disabled:border-transparent disabled:bg-transparent disabled:text-gray-500/80 dark:text-title dark:hover:bg-gray-500/10 dark:hover:text-title dark:disabled:text-gray-500/80 dark:disabled:hover:bg-transparent">
+            <CaretDoubleRightIcon className="size-5" />
+          </ActionIcon>
+        </div>
+      </div>
+    </div>
+  )
+}

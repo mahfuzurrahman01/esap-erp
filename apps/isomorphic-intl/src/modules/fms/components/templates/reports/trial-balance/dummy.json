@@ -1,0 +1,358 @@
+{
+  "trialBalance": {
+    "assets": {
+      "id": "1",
+      "name": "Application of Funds (Assets)",
+      "openingDr": 258533.00,
+      "openingCr": 0.00,
+      "debit": 165279.45,
+      "credit": 436300.00,
+      "closingDr": 0.00,
+      "closingCr": 12487.55,
+      "children": [
+        {
+          "id": "2",
+          "name": "Current Assets",
+          "openingDr": 268533.00,
+          "openingCr": 0.00,
+          "debit": 153800.00,
+          "credit": 286300.00,
+          "closingDr": 136033.00,
+          "closingCr": 0.00,
+          "children": [
+            {
+              "id": "3",
+              "name": "Accounts Receivable",
+              "openingDr": 316000.00,
+              "openingCr": 0.00,
+              "debit": 20000.00,
+              "credit": 85000.00,
+              "closingDr": 251000.00,
+              "closingCr": 0.00,
+              "children": [
+                {
+                  "id": "4",
+                  "name": "Debtors",
+                  "openingDr": 316000.00,
+                  "openingCr": 0.00,
+                  "debit": 20000.00,
+                  "credit": 85000.00,
+                  "closingDr": 251000.00,
+                  "closingCr": 0.00
+                }
+              ]
+            },
+            {
+              "id": "5",
+              "name": "Bank Accounts",
+              "openingDr": 0.00,
+              "openingCr": 142854.00,
+              "debit": 100500.00,
+              "credit": 201300.00,
+              "closingDr": 0.00,
+              "closingCr": 243654.00,
+              "children": [
+                {
+                  "id": "6",
+                  "name": "Bank Account",
+                  "openingDr": 0.00,
+                  "openingCr": 142854.00,
+                  "debit": 100500.00,
+                  "credit": 201300.00,
+                  "closingDr": 0.00,
+                  "closingCr": 243654.00
+                }
+              ]
+            },
+            {
+              "id": "7",
+              "name": "Cash In Hand",
+              "openingDr": 0.00,
+              "openingCr": 0.00,
+              "debit": 33000.00,
+              "credit": 0.00,
+              "closingDr": 33000.00,
+              "closingCr": 0.00,
+              "children": [
+                {
+                  "id": "8",
+                  "name": "Cash",
+                  "openingDr": 0.00,
+                  "openingCr": 0.00,
+                  "debit": 33000.00,
+                  "credit": 0.00,
+                  "closingDr": 33000.00,
+                  "closingCr": 0.00
+                }
+              ]
+            },
+            {
+              "id": "9",
+              "name": "Stock Assets",
+              "openingDr": 95387.00,
+              "openingCr": 0.00,
+              "debit": 300.00,
+              "credit": 0.00,
+              "closingDr": 95687.00,
+              "closingCr": 0.00,
+              "children": [
+                {
+                  "id": "10",
+                  "name": "Stock In Hand",
+                  "openingDr": 95387.00,
+                  "openingCr": 0.00,
+                  "debit": 300.00,
+                  "credit": 0.00,
+                  "closingDr": 95687.00,
+                  "closingCr": 0.00
+                }
+              ]
+            },
+            {
+              "id": "11",
+              "name": "Fixed Assets",
+              "openingDr": 0.00,
+              "openingCr": 0.00,
+              "debit": 11479.45,
+              "credit": 150000.00,
+              "closingDr": 0.00,
+              "closingCr": 138520.55,
+              "children": [
+                {
+                  "id": "12",
+                  "name": "Accumulated Depreciation",
+                  "openingDr": 0.00,
+                  "openingCr": 0.00,
+                  "debit": 6479.45,
+                  "credit": 0.00,
+                  "closingDr": 6479.45,
+                  "closingCr": 0.00
+                },
+                {
+                  "id": "13",
+                  "name": "CWIP Account",
+                  "openingDr": 0.00,
+                  "openingCr": 0.00,
+                  "debit": 5000.00,
+                  "credit": 0.00,
+                  "closingDr": 5000.00,
+                  "closingCr": 0.00
+                },
+                {
+                  "id": "14",
+                  "name": "Electronic Equipment",
+                  "openingDr": 0.00,
+                  "openingCr": 0.00,
+                  "debit": 0.00,
+                  "credit": 150000.00,
+                  "closingDr": 0.00,
+                  "closingCr": 150000.00
+                }
+              ]
+            },
+            {
+              "id": "15",
+              "name": "Temporary Accounts",
+              "openingDr": 0.00,
+              "openingCr": 10000.00,
+              "debit": 0.00,
+              "credit": 0.00,
+              "closingDr": 0.00,
+              "closingCr": 10000.00,
+              "children": [
+                {
+                  "id": "16",
+                  "name": "Temporary Opening",
+                  "openingDr": 0.00,
+                  "openingCr": 10000.00,
+                  "debit": 0.00,
+                  "credit": 0.00,
+                  "closingDr": 0.00,
+                  "closingCr": 10000.00
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "liabilities": {
+      "id": "17",
+      "name": "Source of Funds (Liabilities)",
+      "openingDr": 0.00,
+      "openingCr": 184293.00,
+      "debit": 134100.00,
+      "credit": 47100.00,
+      "closingDr": 0.00,
+      "closingCr": 97293.00,
+      "children": [
+        {
+          "id": "18",
+          "name": "Current Liabilities",
+          "openingDr": 0.00,
+          "openingCr": 184293.00,
+          "debit": 134100.00,
+          "credit": 47100.00,
+          "closingDr": 0.00,
+          "closingCr": 97293.00,
+          "children": [
+            {
+              "id": "19",
+              "name": "Accounts Payable",
+              "openingDr": 0.00,
+              "openingCr": 184293.00,
+              "debit": 132300.00,
+              "credit": 46800.00,
+              "closingDr": 0.00,
+              "closingCr": 98793.00,
+              "children": [
+                {
+                  "id": "20",
+                  "name": "Creditors",
+                  "openingDr": 0.00,
+                  "openingCr": 184293.00,
+                  "debit": 132300.00,
+                  "credit": 46800.00,
+                  "closingDr": 0.00,
+                  "closingCr": 98793.00
+                }
+              ]
+            },
+            {
+              "id": "21",
+              "name": "Stock Liabilities",
+              "openingDr": 0.00,
+              "openingCr": 0.00,
+              "debit": 1800.00,
+              "credit": 300.00,
+              "closingDr": 1500.00,
+              "closingCr": 0.00,
+              "children": [
+                {
+                  "id": "22",
+                  "name": "Stock Received But Not Billed",
+                  "openingDr": 0.00,
+                  "openingCr": 0.00,
+                  "debit": 1800.00,
+                  "credit": 300.00,
+                  "closingDr": 1500.00,
+                  "closingCr": 0.00
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "equity": {
+      "id": "23",
+      "name": "Equity",
+      "openingDr": 35000.00,
+      "openingCr": 0.00,
+      "debit": 0.00,
+      "credit": 0.00,
+      "closingDr": 35000.00,
+      "closingCr": 0.00,
+      "children": [
+        {
+          "id": "24",
+          "name": "Opening Balance Equity",
+          "openingDr": 35000.00,
+          "openingCr": 0.00,
+          "debit": 0.00,
+          "credit": 0.00,
+          "closingDr": 35000.00,
+          "closingCr": 0.00
+        }
+      ]
+    },
+    "expenses": {
+      "id": "25",
+      "name": "Expenses",
+      "openingDr": 0.00,
+      "openingCr": 0.00,
+      "debit": 194520.55,
+      "credit": 10500.00,
+      "closingDr": 184020.55,
+      "closingCr": 0.00,
+      "children": [
+        {
+          "id": "26",
+          "name": "Direct Expenses",
+          "openingDr": 0.00,
+          "openingCr": 0.00,
+          "debit": 6000.00,
+          "credit": 10500.00,
+          "closingDr": 0.00,
+          "closingCr": 4500.00,
+          "children": [
+            {
+              "id": "27",
+              "name": "Stock Expenses",
+              "openingDr": 0.00,
+              "openingCr": 0.00,
+              "debit": 6000.00,
+              "credit": 10500.00,
+              "closingDr": 0.00,
+              "closingCr": 4500.00,
+              "children": [
+                {
+                  "id": "28",
+                  "name": "Expenses Included In Valuation",
+                  "openingDr": 0.00,
+                  "openingCr": 0.00,
+                  "debit": 6000.00,
+                  "credit": 10500.00,
+                  "closingDr": 0.00,
+                  "closingCr": 4500.00
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "29",
+          "name": "Indirect Expenses",
+          "openingDr": 0.00,
+          "openingCr": 0.00,
+          "debit": 188520.55,
+          "credit": 0.00,
+          "closingDr": 188520.55,
+          "closingCr": 0.00,
+          "children": [
+            {
+              "id": "30",
+              "name": "Gain/Loss on Asset Disposal",
+              "openingDr": 0.00,
+              "openingCr": 0.00,
+              "debit": 148520.55,
+              "credit": 0.00,
+              "closingDr": 148520.55,
+              "closingCr": 0.00
+            },
+            {
+              "id": "31",
+              "name": "Salary",
+              "openingDr": 0.00,
+              "openingCr": 0.00,
+              "debit": 40000.00,
+              "credit": 0.00,
+              "closingDr": 40000.00,
+              "closingCr": 0.00
+            }
+          ]
+        }
+      ]
+    },
+    "total": {
+      "id": "33",
+      "name": "Total",
+      "openingDr": 293533.00,
+      "openingCr": 184293.00,
+      "debit": 493900.00,
+      "credit": 493900.00,
+      "closingDr": 219020.55,
+      "closingCr": 109780.55
+    }
+  }
+}

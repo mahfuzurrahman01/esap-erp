@@ -1,0 +1,161 @@
+[
+  {
+    "budgetName": "Budget-Raihan",
+    "budgetDistributionName": "Budget Template created by Raihan",
+    "costCenterName": "Test by Isharul",
+    "yearRange": "2024",
+    "fiscalId": 1,
+    "charOfAccountName": "Entertainment Expenses - BD",
+    "data": {
+      "January": {
+        "budgetAmount": 2916667
+      },
+      "February": {
+        "budgetAmount": 2916667
+      },
+      "March": {
+        "budgetAmount": 2916667
+      },
+      "April": {
+        "budgetAmount": 2916667
+      },
+      "May": {
+        "budgetAmount": 2916667
+      },
+      "June": {
+        "budgetAmount": 2916667
+      },
+      "July": {
+        "budgetAmount": 2916667
+      },
+      "August": {
+        "budgetAmount": 2916667
+      },
+      "September": {
+        "budgetAmount": 2916667
+      },
+      "October": {
+        "budgetAmount": 2916667
+      },
+      "November": {
+        "budgetAmount": 2916667
+      },
+      "December": {
+        "budgetAmount": 2916667
+      }
+    }
+  },
+  {
+    "budgetName": "Budget-Raihan",
+    "budgetDistributionName": "Budget Template created by Raihan",
+    "costCenterName": "Test by Isharul",
+    "yearRange": "2024",
+    "fiscalId": 1,
+    "charOfAccountName": "Administrative Expenses - BD",
+    "data": {
+      "January": {
+        "budgetAmount": 2916667
+      },
+      "February": {
+        "budgetAmount": 2916667
+      },
+      "March": {
+        "budgetAmount": 2916667
+      },
+      "April": {
+        "budgetAmount": 2916667
+      },
+      "May": {
+        "budgetAmount": 2916667
+      },
+      "June": {
+        "budgetAmount": 2916667
+      },
+      "July": {
+        "budgetAmount": 2916667
+      },
+      "August": {
+        "budgetAmount": 2916667
+      },
+      "September": {
+        "budgetAmount": 2916667
+      },
+      "October": {
+        "budgetAmount": 2916667
+      },
+      "November": {
+        "budgetAmount": 2916667
+      },
+      "December": {
+        "budgetAmount": 2916667
+      }
+    }
+  },
+  {
+    "id": 3,
+    "costCenter": "Main - BD",
+    "account": "Depreciation - BD",
+    "data": {
+      "January": {
+        "budget": 20833333,
+        "actual": 1479450,
+        "variance": 19353883
+      },
+      "February": {
+        "budget": 20833333,
+        "actual": 40000000,
+        "variance": -19166667
+      },
+      "March": {
+        "budget": 20833333,
+        "actual": 0,
+        "variance": 20833333
+      },
+      "April": {
+        "budget": 20833333,
+        "actual": 0,
+        "variance": 20833333
+      },
+      "May": {
+        "budget": 20833333,
+        "actual": 0,
+        "variance": 20833333
+      },
+      "June": {
+        "budget": 20833333,
+        "actual": 0,
+        "variance": 20833333
+      },
+      "July": {
+        "budget": 20833333,
+        "actual": 0,
+        "variance": 20833333
+      },
+      "August": {
+        "budget": 20833333,
+        "actual": 0,
+        "variance": 20833333
+      },
+      "September": {
+        "budget": 20833333,
+        "actual": 0,
+        "variance": 20833333
+      },
+      "October": {
+        "budget": 20833333,
+        "actual": 0,
+        "variance": 20833333
+      },
+      "November": {
+        "budget": 20833333,
+        "actual": 0,
+        "variance": 20833333
+      },
+      "December": {
+        "budget": 20833333,
+        "actual": 0,
+        "variance": 20833333
+      }
+    }
+  }
+]

@@ -1,0 +1,269 @@
+export const HRMSApiEndpoints = {
+  fetchAllEmployees: "/hrms/employee/get-all-employee?sort=desc",
+  fetchEmployeeById: (id: number) => `/hrms/employee/${id}`,
+  deleteEmployee: (id: number) => `/hrms/employee/delete-employee/${id}`,
+  deleteEmployees: "/hrms/employee/delete-employees",
+  createEmployee: "/hrms/employee/add-employee",
+  updateEmployee: "/hrms/employee/update-employee",
+  fetchAllDepartments: "/hrms/department/get-all-department?sort=desc",
+  fetchDepartmentStatistics:
+    "/hrms/dashboard/get-department-employee-statistics",
+  deleteDepartment: (id: number) => `/hrms/department/delete-department/${id}`,
+  deleteDepartments: "/hrms/department/delete-departments",
+
+  fetchAllJobPositions: "/hrms/jobposition/get-all-job-position?sort=desc",
+  fetchJobPositionById: (id: number) => `/hrms/jobposition/${id}`,
+  createJobPosition: "/hrms/jobposition/add-job-position",
+  updateJobPosition: "/hrms/jobposition/update-job-position",
+  deleteJobPosition: (id: number) =>
+    `/hrms/jobposition/delete-job-position/${id}`,
+  deleteJobPositions: "/hrms/jobposition/delete-job-positions",
+
+  createDepartment: "/hrms/department/add-department",
+  updateDepartment: "/hrms/department/update-department",
+  fetchAllEmployeeTypes: "/hrms/employeetype/get-all-employee-type?sort=desc",
+  deleteEmployeeType: (id: number) =>
+    `/hrms/employeetype/delete-employee-type/${id}`,
+  deleteEmployeeTypes: "/hrms/employeetype/delete-employee-types",
+  createEmployeeType: "/hrms/employeetype/add-employee-type",
+  updateEmployeeType: "/hrms/employeetype/update-employee-type",
+  fetchAllEmploymentTypes:
+    "/hrms/employmenttype/get-all-employment-type?sort=desc",
+  deleteEmploymentType: (id: number) =>
+    `/hrms/employmenttype/delete-employment-type/${id}`,
+  deleteEmploymentTypes: "/hrms/employmenttype/delete-employment-types",
+  createEmploymentType: "/hrms/employmenttype/add-employment-type",
+  updateEmploymentType: "/hrms/employmenttype/update-employment-type",
+  fetchAllResumeTypes: "/hrms/resumetype/get-all-resumetype?sort=desc",
+  fetchResumeTypeById: (id: number) => `/hrms/resumetype/${id}`,
+  fetchResumeById: (id: number) => `/hrms/resume/${id}`,
+  createResume: "/hrms/resume/add-resume",
+  updateResume: "/hrms/resume/update-resume",
+  deleteResume: (id: number) => `/hrms/resume/delete-resume/${id}`,
+  deleteResumeType: (id: number) => `/hrms/resumetype/delete-resumetype/${id}`,
+  deleteResumeTypes: "/hrms/resumetype/delete-resumeTypes",
+  createResumeType: "/hrms/resumetype/add-resumetype",
+  updateResumeType: "/hrms/resumetype/update-resumetype",
+  fetchWorkInfoById: (id: number) => `/hrms/workinformation/${id}`,
+  createWorkInfo: `/hrms/workinformation/add-workInformation`,
+  updateWorkInfo: `/hrms/workinformation/update-workInformation`,
+  deleteWorkInformation: (id: number) =>
+    `/hrms/workinformation/delete-workInformation/${id}`,
+  fetchPrivateInfoById: (id: number) => `/hrms/privateinformation/${id}`,
+  createPrivateInformation: `/hrms/privateinformation/add-private-information`,
+  updatePrivateInformation: `/hrms/privateinformation/update-private-information`,
+  deletePrivateInformation: (id: number) =>
+    `/hrms/privateinformation/delete-private-information/${id}`,
+  fetchAllWorkAddresses:
+    "/hrms/workingaddress/get-all-working-address?sort=desc",
+  fetchWorkAddressById: (id: number) => `/hrms/workingaddress/${id}`,
+  deleteWorkAddress: (id: number) =>
+    `/hrms/workingaddress/delete-working-address/${id}`,
+  deleteWorkAddresses: "/hrms/workingaddress/delete-working-addresses",
+  createWorkAddress: "/hrms/workingaddress/add-working-address",
+  updateWorkAddress: "/hrms/workingaddress/update-working-address",
+  fetchAllWorkingSchedules:
+    "/hrms/workingschedule/get-all-working-schedule?sort=desc",
+  fetchWorkingScheduleById: (id: number) => `/hrms/workingschedule/${id}`,
+  deleteWorkingSchedule: (id: number) =>
+    `/hrms/workingschedule/delete-working-schedule/${id}`,
+  deleteWorkingSchedules: "/hrms/workingschedule/delete-working-schedules",
+  createWorkingSchedule: "/hrms/workingschedule/add-working-schedule",
+  updateWorkingSchedule: "/hrms/workingschedule/update-working-schedule",
+  fetchAllAttendances: "/hrms/attendance/get-all-attendance?sort=desc",
+  fetchAttendanceById: (id: number) => `/hrms/attendance/attendance-list/${id}`,
+  deleteAttendance: (id: number) => `/hrms/attendance/delete-attendance/${id}`,
+  deleteAttendances: "/hrms/attendance/bulk-delete",
+  createAttendance: "/hrms/attendance/add-attendance",
+  attendanceCheckIn: "/hrms/attendance/checkin",
+  attendanceCheckOut: "/hrms/attendance/checkout",
+  updateAttendance: "/hrms/attendance/update-attendance",
+  fetchAllReconciliations:
+    "/hrms/reconciliationrequest/get-all-request?sort=desc",
+  fetchReconciliationById: (id: number) => `/hrms/reconciliationrequest/${id}`,
+  createReconciliation: "/hrms/reconciliationrequest/add-request",
+  reviewReconciliation: "/hrms/reconciliationrequest/review-request",
+  deleteReconciliation: (id: number) =>
+    `/hrms/reconciliationrequest/delete-request/${id}`,
+  deleteReconciliations: "/hrms/reconciliationrequest/bulk-delete",
+  fetchAllLeaveTypes: "/hrms/leavetype/get-all-leave-type?sort=desc",
+  createLeaveType: "/hrms/leavetype/add-leave-type",
+  updateLeaveType: "/hrms/leavetype/update-leave-type",
+  deleteLeaveType: (id: number) => `/hrms/leavetype/delete-leave-type/${id}`,
+  deleteLeaveTypes: "/hrms/leavetype/delete-leave-types",
+  fetchEmployeeAttendanceStatistics: (employeeId: number) =>
+    `/hrms/attendance/get-employee-attendance-statistics/${employeeId}`,
+  fetchEmployeeAttendance: (employeeId: number) =>
+    `/hrms/attendance/get-employee-attendance/${employeeId}`,
+  fetchAllOffDays: "/hrms/offday/get-all-offday?sort=desc",
+  fetchOffDayById: (id: number) => `/hrms/offday/${id}`,
+  deleteOffDay: (id: number) => `/hrms/offday/delete-offday/${id}`,
+  deleteOffDays: "/hrms/offday/bulk-delete",
+  createOffDay: "/hrms/offday/add-offday",
+  updateOffDay: "/hrms/offday/update-offday",
+  fetchAllLeaveAllocations:
+    "/hrms/leaveallocation/get-all-leaveallocation?sort=desc",
+  createLeaveAllocation: "/hrms/leaveallocation/add-allocation",
+  updateLeaveAllocation: "/hrms/leaveallocation/update-allocation",
+  deleteLeaveAllocation: (id: number) =>
+    `/hrms/leaveallocation/delete-leaveallocation/${id}`,
+  deleteLeaveAllocations: "/hrms/leaveallocation/bulk-delete",
+  fetchAllLeaveRequest: "/hrms/timeoff/get-all-timeOff?sort=desc",
+  createLeaveRequest: "/hrms/timeoff/add-timeOff",
+  updateLeaveRequest: "/hrms/timeoff/update-timeOff-status",
+  deleteLeaveRequest: (id: number) => `/hrms/timeoff/delete-timeOff/${id}`,
+  fetchCompliance: "/hrms/nitaqat/get-compliance",
+  sendEmail: "/hrms/nitaqat/send-email",
+  fetchAllRecruitments: "/hrms/jobPosting/get-all-job-posting?sort=desc",
+  fetchRecruitmentById: (id: number) => `/hrms/jobPosting/${id}`,
+  createRecruitment: "/hrms/jobPosting/add-job-posting",
+  updateRecruitment: "/hrms/jobPosting/update-job-posting",
+  deleteRecruitment: (id: number) =>
+    `/hrms/jobPosting/delete-job-posting/${id}`,
+  deleteRecruitments: "/hrms/jobPosting/delete-job-postings",
+  fetchAllApplications:
+    "/hrms/jobapplication/get-all-job-application?sort=desc",
+  fetchApplicationById: (id: number) => `/hrms/jobapplication/${id}`,
+  createApplication: "/hrms/jobapplication/add-job-application",
+  updateApplication: "/hrms/jobapplication/update-job-application",
+  updateApplicationStatus: "/hrms/jobapplication/update-job-application-status",
+  deleteApplication: (id: number) =>
+    `/hrms/jobapplication/delete-job-application/${id}`,
+  deleteApplications: "/hrms/jobapplication/bulk-delete",
+  fetchAllSalaryCategories:
+    "/hrms/salarycategory/get-all-salaryCategory?sort=desc",
+  createSalaryCategory: "/hrms/salarycategory/add-salary-category",
+  updateSalaryCategory: "/hrms/salarycategory/update-salary-category",
+  deleteSalaryCategory: (id: number) =>
+    `/hrms/salarycategory/delete-salary-category/${id}`,
+  deleteSalaryCategories: "/hrms/salarycategory/delete-salary-categories",
+  fetchSalaryCategory: (id: number) => `/hrms/salarycategory/${id}`,
+  fetchAllSalaryRules: "/hrms/salaryrule/get-all-salary-rules?sort=desc",
+  createSalaryRule: "/hrms/salaryrule/add-salary-rule",
+  updateSalaryRule: "/hrms/salaryrule/update-salary-rule",
+  deleteSalaryRule: (id: number) => `/hrms/salaryrule/delete-salary-rule/${id}`,
+  deleteSalaryRules: "/hrms/salaryrule/delete-salary-rules",
+  fetchSalaryRuleById: (id: number) => `/hrms/salaryrule/${id}`,
+  fetchAllSalaryStructureTypes:
+    "/hrms/salarystructuretype/get-all-salary-structure-type?sort=desc",
+  createSalaryStructureType:
+    "/hrms/salarystructuretype/add-salary-structure-type",
+  updateSalaryStructureType:
+    "/hrms/salarystructuretype/update-salary-structure-type",
+  deleteSalaryStructureType: (id: number) =>
+    `/hrms/salarystructuretype/delete-salary-structure-type/${id}`,
+  deleteSalaryStructureTypes:
+    "/hrms/salarystructuretype/delete-salary-structure-types",
+  fetchAllSalaryStructures:
+    "/hrms/salarystructure/get-all-salary-structure?sort=desc",
+  createSalaryStructure: "/hrms/salarystructure/add-salary-structure",
+  updateSalaryStructure: "/hrms/salarystructure/update-salary-structure",
+  deleteSalaryStructure: (id: number) =>
+    `/hrms/salarystructure/delete-salary-structure/${id}`,
+  deleteSalaryStructures: "/hrms/salarystructure/delete-salary-structures",
+  fetchSalaryStructureById: (id: number) => `/hrms/salarystructure/${id}`,
+  fetchAllEmployeeContracts:
+    "/hrms/employeecontract/get-all-employee-contract?sort=desc",
+  createEmployeeContract: "/hrms/employeecontract/add-employee-contract",
+  updateEmployeeContract: "/hrms/employeecontract/update-employee-contract",
+  deleteEmployeeContract: (id: number) =>
+    `/hrms/employeecontract/delete-employee-contract/${id}`,
+  deleteEmployeeContracts: "/hrms/employeecontract/bulk-delete",
+  fetchEmployeeContractById: (id: number) => `/hrms/employeecontract/${id}`,
+  fetchAllAppraisalTemplates: "/hrms/template/get-all-template?sort=desc",
+  createAppraisalTemplate: "/hrms/template/add-template",
+  updateAppraisalTemplate: "/hrms/template/update-template",
+  deleteAppraisalTemplate: (id: number) =>
+    `/hrms/template/delete-template/${id}`,
+  deleteAppraisalTemplates: "/hrms/template/delete-templates",
+  fetchAppraisalTemplateById: (id: number) => `/hrms/template/${id}`,
+  fetchAllAppraisals: "/hrms/appraisal/get-all-appraisals?sort=desc",
+  createAppraisal: "/hrms/appraisal/add-appraisal",
+  updateAppraisal: "/hrms/appraisal/update-appraisal",
+  deleteAppraisal: (id: number) => `/hrms/appraisal/delete-appraisal${id}`,
+  deleteAppraisals: "/hrms/appraisal/delete-appraisals",
+  fetchAppraisalById: (id: number) => `/hrms/appraisal/${id}`,
+  fetchAllPayslips: "/hrms/payslip/get-all-payslip?sort=desc",
+  createPayslip: "/hrms/payslip/add-payslip",
+  updatePayslip: "/hrms/payslip/update-payslip",
+  deletePayslip: (id: number) => `/hrms/payslip/delete-payslip/${id}`,
+  updatePayslipStatus: "/hrms/payslip/update-payslip-status",
+  deletePayslips: "/hrms/payslip/delete-payslips",
+  fetchPayslipById: (id: number) => `/hrms/payslip/${id}`,
+  fetchEmployeeContractByEmployeeId: (id: number) =>
+    `/hrms/employeecontract/${id}`,
+  fetchAllGoals: "/hrms/goal/get-all-goal?sort=desc",
+  createGoal: "/hrms/goal/add-goal",
+  updateGoal: "/hrms/goal/update-goal",
+  deleteGoal: (id: number) => `/hrms/goal/delete-goal/${id}`,
+  deleteGoals: "/hrms/goal/delete-goals",
+  fetchGoalById: (id: number) => `/hrms/goal/${id}`,
+  fetchAllFolders: "/hrms/folder/get-all-folder",
+  createFolder: "/hrms/folder/add-folder",
+  updateFolder: "/hrms/folder/update-folder",
+  deleteFolder: (id: number) => `/hrms/folder/delete-folder/${id}`,
+  deleteFolders: "/hrms/folder/delete-folders",
+  fetchFolderById: (id: number) => `/hrms/folder/${id}`,
+  createFile: "/hrms/uploadedfile/add-uploaded-file",
+  deleteFile: (id: number) => `/hrms/uploadedfile/delete-uploaded-file/${id}`,
+  deleteFiles: "/hrms/uploadedfile/delete-uploaded-files",
+  fetchAllFiles: "/hrms/uploadedfile/get-all-uploaded-file?sort=desc",
+  fetchFileById: (id: number) => `/hrms/uploadedfile/${id}`,
+  fetchAllTrainingPrograms:
+    "/hrms/trainingprogram/get-all-training-program?sort=desc",
+  createTrainingProgram: "/hrms/trainingprogram/add-training-program",
+  updateTrainingProgram: "/hrms/trainingprogram/update-training-program",
+  deleteTrainingProgram: (id: number) =>
+    `/hrms/trainingprogram/delete-training-program/${id}`,
+  deleteTrainingPrograms: "/hrms/trainingprogram/delete-trainingprograms",
+  fetchTrainingProgramById: (id: number) => `/hrms/trainingprogram/${id}`,
+  fetchAllTrainingSessions: "/hrms/session/get-all-session?sort=desc",
+  fetchTrainingSessionById: (id: number) => `/hrms/session/${id}`,
+  createTrainingSession: "/hrms/session/add-session",
+  updateTrainingSession: "/hrms/session/update-session",
+  deleteTrainingSession: (id: number) => `/hrms/session/${id}`,
+  deleteTrainingSessions: "/hrms/session/delete-sessions",
+
+  // Participants
+  fetchAllParticipants: "/hrms/participants/get-all-participants",
+  fetchParticipantById: (id: number) =>
+    `/hrms/participant/get-participant/${id}`,
+  fetchParticipantsByProgram: (programId: number) =>
+    `/hrms/participants/get-participants-by-program/${programId}`,
+  createParticipant: "/hrms/participant/add-participants",
+  updateParticipant: "/hrms/participant/update-participants",
+  updateParticipantAttendance: (id: number) =>
+    `/hrms/participant/${id}/attendance`,
+  updateParticipantFeedback: (id: number) => `/hrms/participant/${id}/feedback`,
+  deleteParticipant: (id: number) => `/hrms/participant/${id}`,
+  deleteParticipants: "/hrms/participant/delete-participants",
+  fetchAllTrainingAttendances:
+    "/hrms/trainingattendance/get-all-training-attendance?sort=desc",
+  createTrainingAttendance: "/hrms/trainingattendance/add-training-attendance",
+  updateTrainingAttendance:
+    "/hrms/trainingattendance/update-training-attendance",
+  deleteTrainingAttendance: (id: number) =>
+    `/hrms/trainingattendance/delete-training-attendance/${id}`,
+  deleteTrainingAttendances:
+    "/hrms/trainingattendance/delete-training-attendances",
+  fetchTrainingAttendanceById: (id: number) => `/hrms/trainingattendance/${id}`,
+
+  // Training Feedback endpoints
+  fetchAllTrainingFeedbacks:
+    "/hrms/trainingfeedback/get-all-training-feedback?sort=desc",
+  fetchTrainingFeedbackById: (id: number) => `/hrms/trainingfeedback/${id}`,
+  createTrainingFeedback: "/hrms/trainingfeedback/add-training-feedbacks",
+  updateTrainingFeedback: "/hrms/trainingfeedback/update-training-feedbacks",
+  deleteTrainingFeedback: (id: number) =>
+    `/hrms/trainingfeedback/delete-training-feedback/${id}`,
+  deleteTrainingFeedbacks: "/hrms/trainingfeedback/delete-training-feedbacks",
+  fetchEmployeeMonthlyReport: "/hrms/report/employee-monthly-report",
+  fetchEmployeeDailyAttendanceReport:
+    "/hrms/report/employee-daily-attendance-report",
+  fetchEmployeeTimeOffReport: "/hrms/report/employee-daily-timeoff-report",
+  fetchEmployeeYearlyOffdayReport:
+    "/hrms/report/employee-year-wise-offday-report",
+  fetchSaudiEmployeeMonthlyReport: "/hrms/report/saudi-employee-monthly-report",
+  fetchExpatriateEmployeeMonthlyReport:
+    "/hrms/report/expatriate-employee-monthly-report",
+}
