@@ -1,6 +1,6 @@
 export const FMSApiEndpoints = {
   // Country Management Endpoints
-  country: "/country/get-all-country",
+  country: "/fm2/v1/country/get-all-country",
   countryById: (id: number) => `/country/${id}`,
   createCountry: "/country/add-country",
   updateCountry: "/country/update-country",

@@ -16,18 +16,7 @@ const createAxiosInstance = async (
   const session = await getSession()
 
   // Choose the baseURL based on the endpoint parameter
-  const baseURL =
-    endpoint === ApiEndpoint.DEFAULT
-      ? process.env.NEXT_PUBLIC_REST_API_ENDPOINT
-      : endpoint === ApiEndpoint.FMS
-        ? process.env.NEXT_PUBLIC_REST_API_ENDPOINT_FMS
-        : endpoint === ApiEndpoint.HRMS
-          ? process.env.NEXT_PUBLIC_REST_API_ENDPOINT_HRMS
-          : endpoint === ApiEndpoint.CRM
-            ? process.env.NEXT_PUBLIC_REST_API_ENDPOINT_CRM
-            : endpoint === ApiEndpoint.SCM
-              ? process.env.NEXT_PUBLIC_REST_API_ENDPOINT_SCM
-              : process.env.NEXT_PUBLIC_REST_API_ENDPOINT
+  const baseURL = process.env.NEXT_PUBLIC_REST_API_ENDPOINT
 
   return axios.create({
     baseURL: baseURL,

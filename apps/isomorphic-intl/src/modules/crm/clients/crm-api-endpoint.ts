@@ -1,7 +1,7 @@
 export const CRMApiEndpoints = {
   register: "/register",
   login: "/login",
-  users: "/api/v1/users",
+  users: "/auth/v1/users",
   usersByEmail: "/api/v1/users/email",
   bulkDeleteUser: "/auth/v1/users/range",
   roles: "/api/v1/roles",

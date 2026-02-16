@@ -1,172 +1,172 @@
 export const FMSApiEndpoints = {
   // Country Management Endpoints
-  country: "/country/get-all-country",
-  countryById: (id: number) => `/country/${id}`,
-  createCountry: "/country/add-country",
-  updateCountry: "/country/update-country",
-  deleteCountry: (id: number) => `/country/delete-country/${id}`,
-  bulkDeleteCountry: "/country/delete-countries",
+  country: "/fm2/v1/country/get-all-country",
+  countryById: (id: number) => `/fm2/v1/country/${id}`,
+  createCountry: "/fm2/v1/country/add-country",
+  updateCountry: "/fm2/v1/country/update-country",
+  deleteCountry: (id: number) => `/fm2/v1/country/delete-country/${id}`,
+  bulkDeleteCountry: "/fm2/v1/country/delete-countries",
 
   // Currency Management Endpoints
-  currency: "/currency/get-all-currency",
-  currencyById: (id: number) => `/currency/${id}`,
-  createCurrency: "/currency/add-currency",
-  updateCurrency: "/currency/update-currency",
-  deleteCurrency: (id: number) => `/currency/delete-currency/${id}`,
-  bulkCurrency: "/currency/delete-currencies",
+  currency: "/fm2/v1/currency/get-all-currency",
+  currencyById: (id: number) => `/fm2/v1/currency/${id}`,
+  createCurrency: "/fm2/v1/currency/add-currency",
+  updateCurrency: "/fm2/v1/currency/update-currency",
+  deleteCurrency: (id: number) => `/fm2/v1/currency/delete-currency/${id}`,
+  bulkCurrency: "/fm2/v1/currency/delete-currencies",
 
   // Company Management Endpoints
-  company: "/company/get-all-company",
-  companyById: (id: number) => `/company/${id}`,
-  createCompany: "/company/add-company",
-  updateCompany: "/company/update-company",
-  deleteCompany: (id: number) => `/company/delete-company/${id}`,
-  bulkCompany: "/company/delete-companies",
+  company: "/fm2/v1/company/get-all-company",
+  companyById: (id: number) => `/fm2/v1/company/${id}`,
+  createCompany: "/fm2/v1/company/add-company",
+  updateCompany: "/fm2/v1/company/update-company",
+  deleteCompany: (id: number) => `/fm2/v1/company/delete-company/${id}`,
+  bulkCompany: "/fm2/v1/company/delete-companies",
 
   // Chart of Accounts Endpoints
-  COA: "/chartofaccount/get-all-chart-of-accounts",
-  COAById: (id: number) => `/chartofaccount/${id}`,
-  createCOA: "/chartofaccount/add-chart-of-account",
-  updateCOA: "/chartofaccount/update-chart-of-account",
-  deleteCOA: (id: number) => `/chartofaccount/delete-chart-of-account/${id}`,
-  bulkCOA: "/chartofaccount/delete-chart-of-accounts",
+  COA: "/fm2/v1/chartofaccount/get-all-chart-of-accounts",
+  COAById: (id: number) => `/fm2/v1/chartofaccount/${id}`,
+  createCOA: "/fm2/v1/chartofaccount/add-chart-of-account",
+  updateCOA: "/fm2/v1/chartofaccount/update-chart-of-account",
+  deleteCOA: (id: number) => `/fm2/v1/chartofaccount/delete-chart-of-account/${id}`,
+  bulkCOA: "/fm2/v1/chartofaccount/delete-chart-of-accounts",
 
   // Accounting Types Endpoints
-  accountTypes: "/accounttype/get-all-accounting-type",
-  accountTypeById: (id: number) => `/accounttype/${id}`,
-  createAccountType: "/accounttype/add-accounting-type",
-  updateAccountType: "/accounttype/update-accounting-type",
+  accountTypes: "/fm2/v1/accounttype/get-all-accounting-type",
+  accountTypeById: (id: number) => `/fm2/v1/accounttype/${id}`,
+  createAccountType: "/fm2/v1/accounttype/add-accounting-type",
+  updateAccountType: "/fm2/v1/accounttype/update-accounting-type",
   deleteAccountType: (id: number) =>
-    `/accounttype/delete-accounting-type/${id}`,
-  useBulkDeleteAccountType: "/accounttype/delete-accounting-types",
+    `/fm2/v1/accounttype/delete-accounting-type/${id}`,
+  useBulkDeleteAccountType: "/fm2/v1/accounttype/delete-accounting-types",
 
   // Journal Entry Endpoints
-  journalEntry: "/journal/get-all-journals",
-  journalEntryById: (id: number) => `/journal/${id}`,
-  createJournalEntry: "/journal/add-journal",
-  updateJournalEntry: "/journal/update-journal",
-  deleteJournalEntry: (id: number) => `/journal/delete-journal/${id}`,
-  bulkDeleteJournalEntry: "/journal/delete-journals",
+  journalEntry: "/fm2/v1/journal/get-all-journals",
+  journalEntryById: (id: number) => `/fm2/v1/journal/${id}`,
+  createJournalEntry: "/fm2/v1/journal/add-journal",
+  updateJournalEntry: "/fm2/v1/journal/update-journal",
+  deleteJournalEntry: (id: number) => `/fm2/v1/journal/delete-journal/${id}`,
+  bulkDeleteJournalEntry: "/fm2/v1/journal/delete-journals",
 
   // Journal Entry Type Endpoints
-  journalEntryType: "/journaltype/get-all-journal-types",
-  journalEntryTypeById: (id: number) => `/journaltype/${id}`,
-  createJournalEntryType: "/journaltype/add-journal-type",
-  updateJournalEntryType: "/journaltype/update-journal-type",
+  journalEntryType: "/fm2/v1/journaltype/get-all-journal-types",
+  journalEntryTypeById: (id: number) => `/fm2/v1/journaltype/${id}`,
+  createJournalEntryType: "/fm2/v1/journaltype/add-journal-type",
+  updateJournalEntryType: "/fm2/v1/journaltype/update-journal-type",
   deleteJournalEntryType: (id: number) =>
-    `/journaltype/delete-journal-type/${id}`,
-  bulkJournalEntryType: "/journaltype/delete-journal-types",
+    `/fm2/v1/journaltype/delete-journal-type/${id}`,
+  bulkJournalEntryType: "/fm2/v1/journaltype/delete-journal-types",
 
   // Journal Template Endpoints
-  journalEntryTemplate: "/journaltemplate/get-all-journal-templates",
-  journalEntryTemplateById: (id: number) => `/journaltemplate/${id}`,
-  createJournalTemplate: "/journaltemplate/add-journal-template",
-  updateJournalTemplate: "/journaltemplate/update-journal-template",
+  journalEntryTemplate: "/fm2/v1/journaltemplate/get-all-journal-templates",
+  journalEntryTemplateById: (id: number) => `/fm2/v1/journaltemplate/${id}`,
+  createJournalTemplate: "/fm2/v1/journaltemplate/add-journal-template",
+  updateJournalTemplate: "/fm2/v1/journaltemplate/update-journal-template",
   deleteJournalTemplate: (id: number) =>
-    `/journaltemplate/delete-journal-template/${id}`,
-  bulkDeleteJournalTemplate: "/journaltemplate/delete-journal-templates",
+    `/fm2/v1/journaltemplate/delete-journal-template/${id}`,
+  bulkDeleteJournalTemplate: "/fm2/v1/journaltemplate/delete-journal-templates",
 
   // Currency Exchange Endpoints
-  currencyExchange: "/currencyexchange/get-all",
-  currencyExchangeById: (id: number) => `/currencyexchange/${id}`,
-  createCurrencyExchange: "/currencyexchange/add",
-  updateCurrencyExchange: "/currencyexchange/update",
-  deleteCurrencyExchange: (id: number) => `/currencyexchange/delete/${id}`,
-  bulkCurrencyExchange: "/currencyexchange/delete-multiple",
+  currencyExchange: "/fm2/v1/currencyexchange/get-all",
+  currencyExchangeById: (id: number) => `/fm2/v1/currencyexchange/${id}`,
+  createCurrencyExchange: "/fm2/v1/currencyexchange/add",
+  updateCurrencyExchange: "/fm2/v1/currencyexchange/update",
+  deleteCurrencyExchange: (id: number) => `/fm2/v1/currencyexchange/delete/${id}`,
+  bulkCurrencyExchange: "/fm2/v1/currencyexchange/delete-multiple",
 
   // Cost Center Endpoints
-  costCenter: "/costcenter/get-all-cost-center",
-  costCenterById: (id: number) => `/costcenter/${id}`,
-  createCostCenter: "/costcenter/add-cost-center",
-  updateCostCenter: "/costcenter/update-cost-center",
-  deleteCostCenter: (id: number) => `/costcenter/delete-cost-center/${id}`,
-  bulkCostCenter: "/costcenter/delete-cost-centers",
+  costCenter: "/fm2/v1/costcenter/get-all-cost-center",
+  costCenterById: (id: number) => `/fm2/v1/costcenter/${id}`,
+  createCostCenter: "/fm2/v1/costcenter/add-cost-center",
+  updateCostCenter: "/fm2/v1/costcenter/update-cost-center",
+  deleteCostCenter: (id: number) => `/fm2/v1/costcenter/delete-cost-center/${id}`,
+  bulkCostCenter: "/fm2/v1/costcenter/delete-cost-centers",
 
   // Fiscal Year Endpoints
-  fiscalYear: "/fiscalyear/get-all-fiscal-year",
-  fiscalYearById: (id: number) => `/fiscalyear/${id}`,
-  createFiscalYear: "/fiscalyear/add-fiscal-year",
-  updateFiscalYear: "/fiscalyear/update-fiscal-year",
-  deleteFiscalYear: (id: number) => `/fiscalyear/delete-fiscal-year/${id}`,
-  bulkDeleteFiscalYear: "/fiscalyear/delete-fiscal-years",
+  fiscalYear: "/fm2/v1/fiscalyear/get-all-fiscal-year",
+  fiscalYearById: (id: number) => `/fm2/v1/fiscalyear/${id}`,
+  createFiscalYear: "/fm2/v1/fiscalyear/add-fiscal-year",
+  updateFiscalYear: "/fm2/v1/fiscalyear/update-fiscal-year",
+  deleteFiscalYear: (id: number) => `/fm2/v1/fiscalyear/delete-fiscal-year/${id}`,
+  bulkDeleteFiscalYear: "/fm2/v1/fiscalyear/delete-fiscal-years",
 
   // Budget Against Endpoints
-  budgetAgainst: "/budgetagainst/get-all-budget-against",
-  budgetAgainstById: (id: number) => `/budgetagainst/${id}`,
-  createBudgetAgainst: "/budgetagainst/add-budget-against",
-  updateBudgetAgainst: "/budgetagainst/update-budget-against",
+  budgetAgainst: "/fm2/v1/budgetagainst/get-all-budget-against",
+  budgetAgainstById: (id: number) => `/fm2/v1/budgetagainst/${id}`,
+  createBudgetAgainst: "/fm2/v1/budgetagainst/add-budget-against",
+  updateBudgetAgainst: "/fm2/v1/budgetagainst/update-budget-against",
   deleteBudgetAgainst: (id: number) =>
-    `/budgetagainst/delete-budget-against/${id}`,
-  bulkBudgetAgainst: "/budgetagainst/delete-budget-againsts",
+    `/fm2/v1/budgetagainst/delete-budget-against/${id}`,
+  bulkBudgetAgainst: "/fm2/v1/budgetagainst/delete-budget-againsts",
 
   // Budget Distribution Endpoints
-  budgetDistribution: "/budgetdistribution/get-all-budget-distribution",
-  budgetDistributionById: (id: number) => `/budgetdistribution/${id}`,
-  createBudgetDistribution: "/budgetdistribution/add-budget-distribution",
-  updateBudgetDistribution: "/budgetdistribution/update-budget-distribution",
+  budgetDistribution: "/fm2/v1/budgetdistribution/get-all-budget-distribution",
+  budgetDistributionById: (id: number) => `/fm2/v1/budgetdistribution/${id}`,
+  createBudgetDistribution: "/fm2/v1/budgetdistribution/add-budget-distribution",
+  updateBudgetDistribution: "/fm2/v1/budgetdistribution/update-budget-distribution",
   deleteBudgetDistribution: (id: number) =>
-    `/budgetdistribution/delete-budget-distribution/${id}`,
-  bulkBudgetDistribution: "/budgetdistribution/delete-budget-distributions",
+    `/fm2/v1/budgetdistribution/delete-budget-distribution/${id}`,
+  bulkBudgetDistribution: "/fm2/v1/budgetdistribution/delete-budget-distributions",
 
   // Budget Management Endpoints
-  budget: "/budget/get-all-budget",
-  budgetById: (id: number) => `/budget/${id}`,
-  createBudget: "/budget/add-budget",
-  updateBudget: "/budget/update-budget",
-  deleteBudget: (id: number) => `/budget/delete-budget/${id}`,
-  bulkBudget: "/budget/delete-budgets",
+  budget: "/fm2/v1/budget/get-all-budget",
+  budgetById: (id: number) => `/fm2/v1/budget/${id}`,
+  createBudget: "/fm2/v1/budget/add-budget",
+  updateBudget: "/fm2/v1/budget/update-budget",
+  deleteBudget: (id: number) => `/fm2/v1/budget/delete-budget/${id}`,
+  bulkBudget: "/fm2/v1/budget/delete-budgets",
 
   // Budget Variance Endpoints
-  budgetVariance: "/budgetreport/get-budget-variance-report",
-  budgetSummary: "/budgetreport/budget-summary-report",
+  budgetVariance: "/fm2/v1/budgetreport/get-budget-variance-report",
+  budgetSummary: "/fm2/v1/budgetreport/budget-summary-report",
 
   // Asset Management Endpoints
-  asset: "/asset/get-all-asset",
-  assetById: (id: number) => `/asset/${id}`,
-  createAsset: "/asset/add-asset",
-  updateAsset: "/asset/update-asset",
-  deleteAsset: (id: number) => `/asset/delete-asset/${id}`,
-  bulkAsset: "/asset/delete-assets",
+  asset: "/fm2/v1/asset/get-all-asset",
+  assetById: (id: number) => `/fm2/v1/asset/${id}`,
+  createAsset: "/fm2/v1/asset/add-asset",
+  updateAsset: "/fm2/v1/asset/update-asset",
+  deleteAsset: (id: number) => `/fm2/v1/asset/delete-asset/${id}`,
+  bulkAsset: "/fm2/v1/asset/delete-assets",
 
   // Asset Category Endpoints
-  assetCategory: "/assetcategory/get-all-asset-category",
-  assetCategoryById: (id: number) => `/assetcategory/${id}`,
-  createAssetCategory: "/assetcategory/add-asset-category",
-  updateAssetCategory: "/assetcategory/update-asset-category",
+  assetCategory: "/fm2/v1/assetcategory/get-all-asset-category",
+  assetCategoryById: (id: number) => `/fm2/v1/assetcategory/${id}`,
+  createAssetCategory: "/fm2/v1/assetcategory/add-asset-category",
+  updateAssetCategory: "/fm2/v1/assetcategory/update-asset-category",
   deleteAssetCategory: (id: number) =>
-    `/assetcategory/delete-asset-category/${id}`,
-  bulkAssetCategory: "/assetcategory/delete-asset-categories",
+    `/fm2/v1/assetcategory/delete-asset-category/${id}`,
+  bulkAssetCategory: "/fm2/v1/assetcategory/delete-asset-categories",
 
   // Asset Location Endpoints
-  assetLocation: "/assetlocation/get-all-asset-location",
-  assetLocationById: (id: number) => `/assetlocation/${id}`,
-  createAssetLocation: "/assetlocation/add-asset-location",
-  updateAssetLocation: "/assetlocation/update-asset-location",
+  assetLocation: "/fm2/v1/assetlocation/get-all-asset-location",
+  assetLocationById: (id: number) => `/fm2/v1/assetlocation/${id}`,
+  createAssetLocation: "/fm2/v1/assetlocation/add-asset-location",
+  updateAssetLocation: "/fm2/v1/assetlocation/update-asset-location",
   deleteAssetLocation: (id: number) =>
-    `/assetlocation/delete-asset-location/${id}`,
-  bulkAssetLocation: "/assetlocation/delete-asset-locations",
+    `/fm2/v1/assetlocation/delete-asset-location/${id}`,
+  bulkAssetLocation: "/fm2/v1/assetlocation/delete-asset-locations",
 
   checkProductAsset: (productId: number) =>
-    `/asset/check-product-asset/${productId}`,
-  getAssetWithoutMovement: "/asset/get-asset-list-without-movement",
+    `/fm2/v1/asset/check-product-asset/${productId}`,
+  getAssetWithoutMovement: "/fm2/v1/asset/get-asset-list-without-movement",
 
   // Asset Movement Endpoints
-  assetMovement: "/assetmovement/get-all-asset-movement",
-  assetMovementById: (id: number) => `/assetmovement/${id}`,
-  createAssetMovement: "/assetmovement/add-asset-movement",
-  updateAssetMovement: "/assetmovement/update-asset-movement",
+  assetMovement: "/fm2/v1/assetmovement/get-all-asset-movement",
+  assetMovementById: (id: number) => `/fm2/v1/assetmovement/${id}`,
+  createAssetMovement: "/fm2/v1/assetmovement/add-asset-movement",
+  updateAssetMovement: "/fm2/v1/assetmovement/update-asset-movement",
   deleteAssetMovement: (id: number) =>
-    `/assetmovement/delete-asset-movement/${id}`,
-  bulkAssetMovement: "/assetmovement/delete-asset-movements",
+    `/fm2/v1/assetmovement/delete-asset-movement/${id}`,
+  bulkAssetMovement: "/fm2/v1/assetmovement/delete-asset-movements",
 
   // Asset Maintenance Endpoints
-  assetMaintenance: "/assetmaintenance/get-all-asset-maintenance",
-  assetMaintenanceById: (id: number) => `/assetmaintenance/${id}`,
-  createAssetMaintenance: "/assetmaintenance/add-asset-maintenance",
-  updateAssetMaintenance: "/assetmaintenance/update-asset-maintenance",
+  assetMaintenance: "/fm2/v1/assetmaintenance/get-all-asset-maintenance",
+  assetMaintenanceById: (id: number) => `/fm2/v1/assetmaintenance/${id}`,
+  createAssetMaintenance: "/fm2/v1/assetmaintenance/add-asset-maintenance",
+  updateAssetMaintenance: "/fm2/v1/assetmaintenance/update-asset-maintenance",
   deleteAssetMaintenance: (id: number) =>
-    `/assetmaintenance/delete-asset-maintenance/${id}`,
-  bulkAssetMaintenance: "/assetmaintenance/delete-asset-maintenances",
+    `/fm2/v1/assetmaintenance/delete-asset-maintenance/${id}`,
+  bulkAssetMaintenance: "/fm2/v1/assetmaintenance/delete-asset-maintenances",
 
   // Asset Maintenance Status Endpoints
   // assetMaintenanceStatus:
@@ -183,21 +183,21 @@ export const FMSApiEndpoints = {
   //   "/fm/asset-maintenance-status/delete-asset-maintenance-statuses",
 
   // Asset Depreciation Schedule Endpoints
-  assetDepreciationSchedule: "/assetdepreciation/get-all-asset-depreciation",
-  assetDepreciationScheduleById: (id: number) => `/assetdepreciation/${id}`,
-  // createAssetDepreciationSchedule: "/assetdepreciation/add-asset-depreciation",
+  assetDepreciationSchedule: "/fm2/v1/assetdepreciation/get-all-asset-depreciation",
+  assetDepreciationScheduleById: (id: number) => `/fm2/v1/assetdepreciation/${id}`,
+  // createAssetDepreciationSchedule: "/fm2/v1/assetdepreciation/add-asset-depreciation",
   deleteAssetDepreciationSchedule: (id: number) =>
-    `/assetdepreciation/delete-asset-depreciation/${id}`,
+    `/fm2/v1/assetdepreciation/delete-asset-depreciation/${id}`,
   bulkAssetDepreciationSchedule:
-    "/assetdepreciation/delete-asset-depreciations",
+    "/fm2/v1/assetdepreciation/delete-asset-depreciations",
 
   // Asset Repair Endpoints
-  assetRepair: "/assetrepair/get-all-asset-repair",
-  assetRepairById: (id: number) => `/assetrepair/${id}`,
-  createAssetRepair: "/assetrepair/add-asset-repair",
-  updateAssetRepair: "/assetrepair/update-asset-repair",
-  deleteAssetRepair: (id: number) => `/assetrepair/delete-asset-repair/${id}`,
-  bulkAssetRepair: "/assetrepair/delete-asset-repairs",
+  assetRepair: "/fm2/v1/assetrepair/get-all-asset-repair",
+  assetRepairById: (id: number) => `/fm2/v1/assetrepair/${id}`,
+  createAssetRepair: "/fm2/v1/assetrepair/add-asset-repair",
+  updateAssetRepair: "/fm2/v1/assetrepair/update-asset-repair",
+  deleteAssetRepair: (id: number) => `/fm2/v1/assetrepair/delete-asset-repair/${id}`,
+  bulkAssetRepair: "/fm2/v1/assetrepair/delete-asset-repairs",
 
   // Asset Repair Status Endpoints
   // assetRepairStatus: "/fm/asset-repair-status/get-all-asset-repair-statuses",
@@ -211,20 +211,20 @@ export const FMSApiEndpoints = {
   // bulkAssetRepairStatus: "/fm/asset-repair-status/delete-asset-repair-statuses",
 
   // Tax Management Endpoints
-  taxCategory: "/taxcategory/get-all-tax-category",
-  taxCategoryById: (id: number) => `/taxcategory/${id}`,
-  createTaxCategory: "/taxcategory/add-tax-category",
-  updateTaxCategory: "/taxcategory/update-tax-category",
-  deleteTaxCategory: (id: number) => `/taxcategory/delete-tax-category/${id}`,
-  bulkTaxCategory: "/taxcategory/delete-tax-categories",
+  taxCategory: "/fm2/v1/taxcategory/get-all-tax-category",
+  taxCategoryById: (id: number) => `/fm2/v1/taxcategory/${id}`,
+  createTaxCategory: "/fm2/v1/taxcategory/add-tax-category",
+  updateTaxCategory: "/fm2/v1/taxcategory/update-tax-category",
+  deleteTaxCategory: (id: number) => `/fm2/v1/taxcategory/delete-tax-category/${id}`,
+  bulkTaxCategory: "/fm2/v1/taxcategory/delete-tax-categories",
 
   // Tax Rule Endpoints
-  taxRule: "/taxrule/get-all-tax-rule",
-  taxRuleById: (id: number) => `/taxrule/${id}`,
-  createTaxRule: "/taxrule/add-tax-rule",
-  updateTaxRule: "/taxrule/update-tax-rule",
-  deleteTaxRule: (id: number) => `/taxrule/delete-tax-rule/${id}`,
-  bulkTaxRule: "/taxrule/delete-tax-rules",
+  taxRule: "/fm2/v1/taxrule/get-all-tax-rule",
+  taxRuleById: (id: number) => `/fm2/v1/taxrule/${id}`,
+  createTaxRule: "/fm2/v1/taxrule/add-tax-rule",
+  updateTaxRule: "/fm2/v1/taxrule/update-tax-rule",
+  deleteTaxRule: (id: number) => `/fm2/v1/taxrule/delete-tax-rule/${id}`,
+  bulkTaxRule: "/fm2/v1/taxrule/delete-tax-rules",
 
   // Tax Rule Type Endpoints
   // taxRuleType: "/fm/tax-rule-type/get-all-tax-rule-types",
@@ -237,21 +237,21 @@ export const FMSApiEndpoints = {
   //   `/fm/tax-rule-type/delete-tax-rule-type/${id}`,
 
   // ZATCA Category Endpoints
-  zatcaCategory: "/zatcacategory/get-all-zatca-category",
-  zatcaCategoryById: (id: number) => `/zatcacategory/${id}`,
-  createZatcaCategory: "/zatcacategory/add-zatca-category",
-  updateZatcaCategory: "/zatcacategory/update-zatca-category",
+  zatcaCategory: "/fm2/v1/zatcacategory/get-all-zatca-category",
+  zatcaCategoryById: (id: number) => `/fm2/v1/zatcacategory/${id}`,
+  createZatcaCategory: "/fm2/v1/zatcacategory/add-zatca-category",
+  updateZatcaCategory: "/fm2/v1/zatcacategory/update-zatca-category",
   deleteZatcaCategory: (id: number) =>
-    `/zatcacategory/delete-zatca-category/${id}`,
-  bulkZatcaCategory: "/zatcacategory/delete--zatca-categories",
+    `/fm2/v1/zatcacategory/delete-zatca-category/${id}`,
+  bulkZatcaCategory: "/fm2/v1/zatcacategory/delete--zatca-categories",
 
   // Tax Template Endpoints
-  taxTemplate: "/taxtemplate/get-all-tax-template",
-  taxTemplateById: (id: number) => `/taxtemplate/${id}`,
-  createTaxTemplate: "/taxtemplate/add-tax-template",
-  updateTaxTemplate: "/taxtemplate/update-tax-template",
-  deleteTaxTemplate: (id: number) => `/taxtemplate/delete-tax-template/${id}`,
-  bulkTaxTemplate: "/taxtemplate/delete-tax-templates",
+  taxTemplate: "/fm2/v1/taxtemplate/get-all-tax-template",
+  taxTemplateById: (id: number) => `/fm2/v1/taxtemplate/${id}`,
+  createTaxTemplate: "/fm2/v1/taxtemplate/add-tax-template",
+  updateTaxTemplate: "/fm2/v1/taxtemplate/update-tax-template",
+  deleteTaxTemplate: (id: number) => `/fm2/v1/taxtemplate/delete-tax-template/${id}`,
+  bulkTaxTemplate: "/fm2/v1/taxtemplate/delete-tax-templates",
 
   // Tax Template Types Endpoints
   // taxTemplateTypes: "/fm/tax-template-type/get-all-tax-template-types",
@@ -271,12 +271,12 @@ export const FMSApiEndpoints = {
   // deleteTaxType: (id: number) => `/fm/tax-type/delete-tax-type/${id}`,
 
   // Payment Mode Endpoints
-  modeOfPayment: "/modeofpayment/get-all",
-  modeOfPaymentById: (id: number) => `/modeofpayment/${id}`,
-  createModeOfPayment: "/modeofpayment/add-mode-of-payment",
-  updateModeOfPayment: "/modeofpayment/update-mode-of-payment",
-  deleteModeOfPayment: (id: number) => `/modeofpayment/delete/${id}`,
-  bulkModeOfPayment: "/modeofpayment/delete-multiple",
+  modeOfPayment: "/fm2/v1/modeofpayment/get-all",
+  modeOfPaymentById: (id: number) => `/fm2/v1/modeofpayment/${id}`,
+  createModeOfPayment: "/fm2/v1/modeofpayment/add-mode-of-payment",
+  updateModeOfPayment: "/fm2/v1/modeofpayment/update-mode-of-payment",
+  deleteModeOfPayment: (id: number) => `/fm2/v1/modeofpayment/delete/${id}`,
+  bulkModeOfPayment: "/fm2/v1/modeofpayment/delete-multiple",
 
   // Payment Request Type Endpoints
   // paymentRequestType: "/fm/payment-request-type/get-payment-request-types",
@@ -301,58 +301,58 @@ export const FMSApiEndpoints = {
   //   `/fm/mode-of-payment-type/delete-mode-of-payment-type/${id}`,
 
   // Payment Request Endpoints
-  paymentRequest: "/paymentrequest/get-all",
-  paymentRequestById: (id: number) => `/paymentrequest/${id}`,
-  createPaymentRequest: "/paymentrequest/add-payment-request",
-  updatePaymentRequest: "/paymentrequest/update-payment-request/",
-  updatePaymentRequestStatus: "/paymentrequest/update-request-status",
-  deletePaymentRequest: (id: number) => `/paymentrequest/delete/${id}`,
-  bulkPaymentRequest: "/paymentrequest/delete-multiple",
+  paymentRequest: "/fm2/v1/paymentrequest/get-all",
+  paymentRequestById: (id: number) => `/fm2/v1/paymentrequest/${id}`,
+  createPaymentRequest: "/fm2/v1/paymentrequest/add-payment-request",
+  updatePaymentRequest: "/fm2/v1/paymentrequest/update-payment-request/",
+  updatePaymentRequestStatus: "/fm2/v1/paymentrequest/update-request-status",
+  deletePaymentRequest: (id: number) => `/fm2/v1/paymentrequest/delete/${id}`,
+  bulkPaymentRequest: "/fm2/v1/paymentrequest/delete-multiple",
 
   // Payment Endpoints
-  payment: "/payment/get-all-payments",
-  paymentById: (id: number) => `/payment/${id}`,
-  createPayment: "/payment/add-payment",
-  updatePayment: "/payment/update-payment",
-  deletePayment: (id: number) => `/payment/delete-payment/${id}`,
-  bulkPayment: "/payment/delete-payments",
+  payment: "/fm2/v1/payment/get-all-payments",
+  paymentById: (id: number) => `/fm2/v1/payment/${id}`,
+  createPayment: "/fm2/v1/payment/add-payment",
+  updatePayment: "/fm2/v1/payment/update-payment",
+  deletePayment: (id: number) => `/fm2/v1/payment/delete-payment/${id}`,
+  bulkPayment: "/fm2/v1/payment/delete-payments",
 
   // Stripe Payment Endpoints
-  createStripePayment: "/stripepayment/checkout-payment",
+  createStripePayment: "/fm2/v1/stripepayment/checkout-payment",
 
   // Bank Management Endpoints
-  bank: "/bank/get-all-bank",
-  bankById: (id: number) => `/bank/${id}`,
-  createBank: "/bank/add-bank",
-  updateBank: "/bank/update-bank",
-  deleteBank: (id: number) => `/bank/delete-bank/${id}`,
-  bulkBank: "/bank/delete-banks",
+  bank: "/fm2/v1/bank/get-all-bank",
+  bankById: (id: number) => `/fm2/v1/bank/${id}`,
+  createBank: "/fm2/v1/bank/add-bank",
+  updateBank: "/fm2/v1/bank/update-bank",
+  deleteBank: (id: number) => `/fm2/v1/bank/delete-bank/${id}`,
+  bulkBank: "/fm2/v1/bank/delete-banks",
 
   // Bank Account Endpoints
-  bankAccount: "/bankaccount/get-all-bank-account",
-  bankAccountById: (id: number) => `/bankaccount/${id}`,
-  createBankAccount: "/bankaccount/add-bank-account",
-  updateBankAccount: "/bankaccount/update-bank-account",
-  deleteBankAccount: (id: number) => `/bankaccount/delete-bank-account/${id}`,
-  bulkBankAccount: "/bankaccount/delete-bank-accounts",
+  bankAccount: "/fm2/v1/bankaccount/get-all-bank-account",
+  bankAccountById: (id: number) => `/fm2/v1/bankaccount/${id}`,
+  createBankAccount: "/fm2/v1/bankaccount/add-bank-account",
+  updateBankAccount: "/fm2/v1/bankaccount/update-bank-account",
+  deleteBankAccount: (id: number) => `/fm2/v1/bankaccount/delete-bank-account/${id}`,
+  bulkBankAccount: "/fm2/v1/bankaccount/delete-bank-accounts",
 
   // Bank Account Type Endpoints
-  bankAccountType: "/bankaccounttype/get-all-bank-account-type",
-  bankAccountTypeById: (id: number) => `/bankaccounttype/${id}`,
-  createBankAccountType: "/bankaccounttype/add-bank-account-type",
-  updateBankAccountType: "/bankaccounttype/update-bank-account-type",
+  bankAccountType: "/fm2/v1/bankaccounttype/get-all-bank-account-type",
+  bankAccountTypeById: (id: number) => `/fm2/v1/bankaccounttype/${id}`,
+  createBankAccountType: "/fm2/v1/bankaccounttype/add-bank-account-type",
+  updateBankAccountType: "/fm2/v1/bankaccounttype/update-bank-account-type",
   deleteBankAccountType: (id: number) =>
-    `/bankaccounttype/delete-bank-account-type/${id}`,
-  bulkBankAccountType: "/bankaccounttype/delete-bank-account-types",
+    `/fm2/v1/bankaccounttype/delete-bank-account-type/${id}`,
+  bulkBankAccountType: "/fm2/v1/bankaccounttype/delete-bank-account-types",
 
   // Bank Transaction Endpoints
-  bankTransaction: "/banktransaction/get-all-bank-transaction",
-  bankTransactionById: (id: number) => `/banktransaction/${id}`,
-  createBankTransaction: "/banktransaction/add-bank-transaction",
-  updateBankTransaction: "/banktransaction/update-bank-transaction",
+  bankTransaction: "/fm2/v1/banktransaction/get-all-bank-transaction",
+  bankTransactionById: (id: number) => `/fm2/v1/banktransaction/${id}`,
+  createBankTransaction: "/fm2/v1/banktransaction/add-bank-transaction",
+  updateBankTransaction: "/fm2/v1/banktransaction/update-bank-transaction",
   deleteBankTransaction: (id: number) =>
-    `/banktransaction/delete-bank-transaction/${id}`,
-  bulkBankTransaction: "/banktransaction/delete-bank-transactions",
+    `/fm2/v1/banktransaction/delete-bank-transaction/${id}`,
+  bulkBankTransaction: "/fm2/v1/banktransaction/delete-bank-transactions",
 
   // Bank Transaction Status Endpoints
   // bankTransactionStatus:
@@ -376,25 +376,25 @@ export const FMSApiEndpoints = {
   // deletePartyType: (id: number) => `/fm/party-type/delete-party-type/${id}`,
 
   // Bank Statement Endpoints
-  importBankStatement: "/bankstatement/get-all-bank-statement",
-  importBankStatementById: (id: number) => `/bankstatement/${id}`,
-  createImportBankStatement: "/bankstatement/add-bank-statement",
-  updateImportBankStatement: "/bankstatement/update-bank-statement",
+  importBankStatement: "/fm2/v1/bankstatement/get-all-bank-statement",
+  importBankStatementById: (id: number) => `/fm2/v1/bankstatement/${id}`,
+  createImportBankStatement: "/fm2/v1/bankstatement/add-bank-statement",
+  updateImportBankStatement: "/fm2/v1/bankstatement/update-bank-statement",
   deleteImportBankStatement: (id: number) =>
-    `/bankstatement/delete-bank-statement/${id}`,
-  bulkImportBankStatement: "/bankstatement/delete-bank-statements",
+    `/fm2/v1/bankstatement/delete-bank-statement/${id}`,
+  bulkImportBankStatement: "/fm2/v1/bankstatement/delete-bank-statements",
 
   // Bank Clearance Endpoints
-  bankClearance: "/bankclearance/get-all-bank-clearance",
-  updateBankClearanceStatus: "/bankclearance/update-clearence-status",
+  bankClearance: "/fm2/v1/bankclearance/get-all-bank-clearance",
+  updateBankClearanceStatus: "/fm2/v1/bankclearance/update-clearence-status",
   updateBankClearanceStatusBatch:
-    "/bankclearance/update-clearance-status-batch",
+    "/fm2/v1/bankclearance/update-clearance-status-batch",
 
   // Bank Reconciliation Endpoints
-  bankReconciliation: "/bankreconciliation/get-all-unreconciled-transaction",
+  bankReconciliation: "/fm2/v1/bankreconciliation/get-all-unreconciled-transaction",
   updateReconciliation: (id: number) =>
-    `/bankreconciliation/update-unreconciled-transaction/${id}`,
-  bankUnreconciledPayment: "/bankreconciliation/get-all-unreconciled-payment",
+    `/fm2/v1/bankreconciliation/update-unreconciled-transaction/${id}`,
+  bankUnreconciledPayment: "/fm2/v1/bankreconciliation/get-all-unreconciled-payment",
 
   // FIXME: Rmove Transaction Payment Type Endpoints
   // transactionPaymentType:
@@ -412,34 +412,34 @@ export const FMSApiEndpoints = {
 
   // Terms And Conditions Endpoints
   termsAndConditions:
-    "/compliancetermsandcondition/get-all-compliance-terms-and-condition",
-  termsAndConditionsById: (id: number) => `/compliancetermsandcondition/${id}`,
+    "/fm2/v1/compliancetermsandcondition/get-all-compliance-terms-and-condition",
+  termsAndConditionsById: (id: number) => `/fm2/v1/compliancetermsandcondition/${id}`,
   createTermsAndConditions:
-    "/compliancetermsandcondition/add-compliance-terms-and-condition",
+    "/fm2/v1/compliancetermsandcondition/add-compliance-terms-and-condition",
   updateTermsAndConditions:
-    "/compliancetermsandcondition/update-compliance-terms-and-condition",
+    "/fm2/v1/compliancetermsandcondition/update-compliance-terms-and-condition",
   deleteTermsAndConditions: (id: number) =>
-    `/compliancetermsandcondition/delete-compliance-terms-and-condition/${id}`,
+    `/fm2/v1/compliancetermsandcondition/delete-compliance-terms-and-condition/${id}`,
   bulkTermsAndConditions:
-    "/compliancetermsandcondition/delete-compliance-terms-and-conditions",
+    "/fm2/v1/compliancetermsandcondition/delete-compliance-terms-and-conditions",
 
   // Financial Report Endpoints
-  generalLedger: "/accountingreport/general-ledger-report",
-  balanceSheet: "/paymentreport/get-balance-sheet-report",
-  cashFlow: "/dashboard/cash-flow",
-  fixedAssetRegister: "/assetreport/get-fixed-asset-register-report",
-  assetDepreciationLedger: "/assetreport/get-asset-depreciation-ledger-report",
-  assetMovementHistory: "/assetreport/get-asset-movement-history-report",
-  assetRepairHistory: "/assetreport/get-asset-repair-history-report",
-  trialBalance: "/accountingreport/trial-balance-report",
-  profitAndLoss: "/paymentreport/get-profit-and-loss-statement-report",
-  accountPayable: "/fm/account-payable/get-account-payable",
-  accountReceivable: "/fm/account-receivable/get-account-receivable",
-  bankAccountSummary: "/bankingreport/bank-account-summary",
-  monthlyBankTransactions: "/bankingreport/monthly-bank-transactions",
-  bankStatementReport: "/bankingreport/bank-statement-report/last-6-months",
-  paymentSummary: "/paymentreport/payment-summary-by-company",
-  dailyPayments: "/paymentreport/all-payment-history",
+  generalLedger: "/fm2/v1/accountingreport/general-ledger-report",
+  balanceSheet: "/fm2/v1/paymentreport/get-balance-sheet-report",
+  cashFlow: "/fm2/v1/dashboard/cash-flow",
+  fixedAssetRegister: "/fm2/v1/assetreport/get-fixed-asset-register-report",
+  assetDepreciationLedger: "/fm2/v1/assetreport/get-asset-depreciation-ledger-report",
+  assetMovementHistory: "/fm2/v1/assetreport/get-asset-movement-history-report",
+  assetRepairHistory: "/fm2/v1/assetreport/get-asset-repair-history-report",
+  trialBalance: "/fm2/v1/accountingreport/trial-balance-report",
+  profitAndLoss: "/fm2/v1/paymentreport/get-profit-and-loss-statement-report",
+  accountPayable: "/fm2/v1/account-payable/get-account-payable",
+  accountReceivable: "/fm2/v1/account-receivable/get-account-receivable",
+  bankAccountSummary: "/fm2/v1/bankingreport/bank-account-summary",
+  monthlyBankTransactions: "/fm2/v1/bankingreport/monthly-bank-transactions",
+  bankStatementReport: "/fm2/v1/bankingreport/bank-statement-report/last-6-months",
+  paymentSummary: "/fm2/v1/paymentreport/payment-summary-by-company",
+  dailyPayments: "/fm2/v1/paymentreport/all-payment-history",
 
   // Dashboard Endpoints
   // incomeExpensesProfit: "/fm/dashboard/get-income-expenses-and-profit",
@@ -448,8 +448,8 @@ export const FMSApiEndpoints = {
   // topBankTransactionsByPeriod: "/fm/dashboard/get-bank-transactions-by-period",
   // bankAccountBalance: "/fm/dashboard/get-account-balance",
 
-  topCompanyIncome: "/dashboard/get-top-company-income-report",
-  companyWiseProfit: "/dashboard/get-company-wise-profit-report",
-  topBankAccount: "/dashboard/top-bank-accounts-with-history",
-  cashFlowSummary: "/dashboard/cash-flow",
+  topCompanyIncome: "/fm2/v1/dashboard/get-top-company-income-report",
+  companyWiseProfit: "/fm2/v1/dashboard/get-company-wise-profit-report",
+  topBankAccount: "/fm2/v1/dashboard/top-bank-accounts-with-history",
+  cashFlowSummary: "/fm2/v1/dashboard/cash-flow",
 }
