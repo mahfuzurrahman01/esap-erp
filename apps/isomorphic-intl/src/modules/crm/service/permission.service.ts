@@ -9,21 +9,21 @@ import httpClient from "@/utils/axios"
 export const permission = {
   all: (params: Partial<PermissionQueryOptions>) =>
     httpClient.get<PermissionPaginator>(
-      ApiEndpoint.crm.permissions,
+      ApiEndpoint.auth.permissions,
       params
     ),
   get: (id: string) =>
-    httpClient.get<PermissionList>(`${ApiEndpoint.crm.permissions}/${id}`),
+    httpClient.get<PermissionList>(`${ApiEndpoint.auth.permissions}/${id}`),
   create: (input: PermissionList) =>
-    httpClient.post<PermissionList>(ApiEndpoint.crm.permissions, input),
+    httpClient.post<PermissionList>(ApiEndpoint.auth.permissions, input),
   update: (id: string, input: PermissionList) =>
     httpClient.put<PermissionList>(
-      `${ApiEndpoint.crm.permissions}/${id}`,
+      `${ApiEndpoint.auth.permissions}/${id}`,
       input
     ),
   delete: (id: string) =>
-    httpClient.delete(`${ApiEndpoint.crm.permissions}/${id}`),
+    httpClient.delete(`${ApiEndpoint.auth.permissions}/${id}`),
   bulkDelete: (ids: number[]): Promise<void> => {
-    return httpClient.bulkDelete(ApiEndpoint.crm.bulkDeletePermission, ids)
+    return httpClient.bulkDelete(ApiEndpoint.auth.bulkDeletePermission, ids)
   },
 }

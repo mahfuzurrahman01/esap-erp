@@ -1,7 +1,7 @@
 "use client"
 
 import { useSearchParams } from "next/navigation"
-import React, { useEffect, useRef, useState } from "react"
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 
 import { useCurrentUser } from "@/hooks/auth/use-auth"
 import {
@@ -15,7 +15,7 @@ import Conversation from "./conversation"
 import MessageList from "./message-list"
 
 export default function MessageContainer() {
-  const { data:log, isLoading } = useMessageList()
+  const { data: log, isLoading } = useMessageList()
   const [selectedContact, setSelectedContact] = useState<any>(null)
   const { mutateAsync: createMessage } = useCreateMessage()
   const [messages, setMessages] = useState<any[]>([])
@@ -28,38 +28,46 @@ export default function MessageContainer() {
 
   const [currentPage, setCurrentPage] = useState(1)
 
+  // Memoize the options object to prevent new reference on each render
+  const selectedContactId = selectedContact?.id ?? 0
+  const detailsOptions = useMemo(
+    () => ({
+      id: selectedContactId,
+      page: currentPage,
+      pageSize: 10,
+    }),
+    [selectedContactId, currentPage]
+  )
+
   const {
     data: details,
     isLoading: isDetailsLoading,
     refetch: fetchMessageDetails,
-  } = useMessageDetailsList({
-    id: selectedContact?.id ?? 0,
-    page: currentPage,
-    pageSize: 10,
-  })
+  } = useMessageDetailsList(detailsOptions)
 
   const [isLoadingMore, setIsLoadingMore] = useState(false)
 
-  const loadMoreMessages = () => {
-    if (isLoadingMore || !selectedContact?.id) return
+  const loadMoreMessages = useCallback(() => {
+    if (isLoadingMore || !selectedContactId) return
     setIsLoadingMore(true)
     fetchMessageDetails()
       .finally(() => setIsLoadingMore(false))
     setCurrentPage((prevPage) => prevPage + 1)
-  }
+  }, [isLoadingMore, selectedContactId, fetchMessageDetails])
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+  const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
     const top = e.currentTarget.scrollTop === 0;
     if (top) {
       loadMoreMessages();
     }
-  };
-  
+  }, [loadMoreMessages]);
+
   useEffect(() => {
+    if (!pusherClient) return
+
     const channel = pusherClient.subscribe('chat-channel')
     channel.bind('new-message', (data: { message: string, sender: string, receiver: string, createdAt: string }) => {
       if (selectedContact?.createdBy == user?.email || selectedContact?.customerId == user?.id) {
-        // console.log("New message received:", data)
         setSelectedContact((prevContact: any) => ({
           ...prevContact,
           messageDetails: prevContact.messageDetails ? [
@@ -71,7 +79,7 @@ export default function MessageContainer() {
               createdAt: new Date().toISOString(),
               messageId: selectedContact.id
             },
-          ]:[{
+          ] : [{
             messageContent: data.message,
             createdBy: user?.email,
             sender: data.sender,
@@ -82,22 +90,26 @@ export default function MessageContainer() {
       }
     })
     return () => {
-      pusherClient.unsubscribe('chat-channel')
+      pusherClient?.unsubscribe('chat-channel')
     }
   }, [selectedContact, user])
 
-  // console.log("messageList", messageList)
-  // console.log("selectedContact", selectedContact)
+  // Track previous details data to prevent circular updates
+  const prevDetailsDataRef = useRef<any>(null)
 
   useEffect(() => {
     if (details?.data && selectedContact) {
+      // Only update if details data actually changed (prevents circular loop)
+      if (prevDetailsDataRef.current === details.data) return
+      prevDetailsDataRef.current = details.data
+
       setSelectedContact((prevContact: any) => {
         const existingMessages = prevContact?.messageDetails || []
         const newMessages = details.data.filter(
           (newMsg: any) =>
             !existingMessages.some(
               (existingMsg: any) =>
-                existingMsg.id === newMsg.id && 
+                existingMsg.id === newMsg.id &&
                 existingMsg.createdAt === newMsg.createdAt
             )
         )
@@ -124,7 +136,6 @@ export default function MessageContainer() {
   useEffect(() => {
     if (customerId && messageList) {
       const contact = messageList.find((item) => item.customerId == customerId && item.createdBy == user?.email)
-      console.log("contact", contact)
       if (contact) {
         setSelectedContact(contact)
       } else {
@@ -139,11 +150,13 @@ export default function MessageContainer() {
     }
   }, [customerId, messageList, user])
 
+  // Fetch message details when contact changes - don't include fetchMessageDetails in deps
   useEffect(() => {
-    if (selectedContact?.id) {
+    if (selectedContactId) {
       fetchMessageDetails()
     }
-  }, [selectedContact?.id, fetchMessageDetails])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedContactId])
 
   return (
     <div className="card-shadow !rounded-2xl mb-9 grid grid-cols-5">
@@ -167,3 +180,4 @@ export default function MessageContainer() {
     </div>
   )
 }
+

@@ -111,10 +111,10 @@ class HttpClient {
       isFormData ? convertToFormData(body) : body,
       isFormData
         ? {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
         : undefined
     )
     return responseBody(response)
@@ -132,10 +132,10 @@ class HttpClient {
       isFormData ? convertToFormData(body) : body,
       isFormData
         ? {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
         : undefined
     )
     return responseBody(response)
@@ -153,10 +153,10 @@ class HttpClient {
       isFormData ? convertToFormData(body) : body,
       isFormData
         ? {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
         : undefined
     )
     return responseBody(response)

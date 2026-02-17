@@ -9,17 +9,17 @@ import httpClient from "@/utils/axios"
 export const reset = {
   reset: (input: ResetPasswordPayload) =>
     httpClient.post<ResetPasswordPayload>(
-      ApiEndpoint.crm.resetPassword,
+      ApiEndpoint.auth.resetPassword,
       input
     ),
   profileReset: (input: ProfileResetPasswordTypes) =>
     httpClient.post<ProfileResetPasswordTypes>(
-      ApiEndpoint.crm.profileResetPassword,
+      ApiEndpoint.auth.profileResetPassword,
       input
     ),
   forgot: (input: ForgotPasswordPayload) =>
     httpClient.get<ForgotPasswordPayload>(
-      ApiEndpoint.crm.forgotPassword,
+      ApiEndpoint.auth.forgotPassword,
       input
     ),
 }

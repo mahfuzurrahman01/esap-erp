@@ -15,7 +15,7 @@ export const CountryService = {
     )
   },
   get: (id: number) =>
-    HttpClient.get<CountryList>(ApiEndpoint.fms.countryById(id), ApiBase.FMS),
+    HttpClient.get<CountryList>(ApiEndpoint.fms.countryById(id), undefined, ApiBase.FMS),
   create: (input: CountryList) =>
     HttpClient.post<CountryList>(
       ApiEndpoint.fms.createCountry,

@@ -24,6 +24,11 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "esapdev.xyz",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "isomorphic-furyroad.s3.amazonaws.com",
         pathname: "/**",
       },

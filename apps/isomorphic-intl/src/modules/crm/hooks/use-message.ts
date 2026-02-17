@@ -53,6 +53,7 @@ export function useMessageDetailsList(options?: Partial<MessageQueryOptions>) {
     },
     placeholderData: keepPreviousData,
     throwOnError: false,
+    enabled: !!(options as any)?.id,
     staleTime: 5 * 60 * 1000, // 5 minutes
     gcTime: 10 * 60 * 1000, // 10 minutes
   })
@@ -417,10 +418,10 @@ export function useDeleteMessage() {
       toast.success(t("form-message-deleted-successfully"))
     },
 
-    onError: (err:any, variables, context) => {
-      if(err.response.data.details){
+    onError: (err: any, variables, context) => {
+      if (err.response.data.details) {
         toast.error(err.response.data.details)
-      }else{
+      } else {
         toast.error(t("form-failed-to-delete-message"))
       }
       // If the mutation fails, use the context returned from onMutate to roll back
