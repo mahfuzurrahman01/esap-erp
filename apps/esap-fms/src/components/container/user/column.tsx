@@ -154,7 +154,7 @@ export const useColumn = () => {
         cell: ({
           row,
           table: {
-            options: { meta },
+            options: { meta: _meta },
           },
         }) => (
           <div className="flex items-center justify-end gap-3 pe-3">

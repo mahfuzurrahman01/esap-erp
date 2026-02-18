@@ -1,5 +1,3 @@
-import AccountPayableIcon from "@/components/icons/account-payable"
-import AccountReceivableIcon from "@/components/icons/account-receivable"
 import AccountingIcon from "@/components/icons/accounting"
 import AssetsIcon from "@/components/icons/assets"
 import BankingIcon from "@/components/icons/banking"

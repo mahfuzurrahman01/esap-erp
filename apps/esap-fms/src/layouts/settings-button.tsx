@@ -22,11 +22,9 @@ const SettingsDrawer = dynamic(() => import("@/layouts/settings-drawer"), {
 export default function SettingsButton({
   className,
   children,
-  t,
 }: {
   className?: string
   children?: React.ReactNode
-  t?: (key: string) => string | undefined
 }) {
   const COLOR_PRESETS = usePresets()
   const { openDrawer, closeDrawer } = useDrawer()

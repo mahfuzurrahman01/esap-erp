@@ -8,7 +8,6 @@ import { createColumnHelper } from "@tanstack/react-table"
 import { ActionIcon, Badge, Checkbox, Text, Tooltip } from "rizzui"
 
 import DeletePopover from "@/components/base/delete-popover"
-import { routes } from "@/config/routes"
 import { Person } from "@/data/tan-table-data"
 
 function getStatusBadge(status: string) {

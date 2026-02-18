@@ -40,9 +40,9 @@ function FilterElements<T extends Record<string, any>>({
   updateParams,
 }: TableToolbarProps<T>) {
   const t = useTranslations("table")
-  const tForm = useTranslations("form")
-  const { data: employeeList, isLoading: isEmployeeLoading } = useEmployeeList()
-  const { data: departmentList, isLoading: isDepartmentLoading } =
+  const _tForm = useTranslations("form")
+  const { data: employeeList, isLoading: _isEmployeeLoading } = useEmployeeList()
+  const { data: departmentList, isLoading: _isDepartmentLoading } =
     useDepartmentList()
   const isFiltered = Boolean(
     params?.search ||
@@ -50,7 +50,7 @@ function FilterElements<T extends Record<string, any>>({
     params?.country ||
     params?.managerId
   )
-  const departmentOptions = useSelectOptions<Department>(
+  const _departmentOptions = useSelectOptions<Department>(
     departmentList?.data,
     "departmentName"
   )
@@ -62,18 +62,18 @@ function FilterElements<T extends Record<string, any>>({
     "countryName"
   )
 
-  const employeeOptions = useSelectOptions<EmployeeShortInfo>(
+  const _employeeOptions = useSelectOptions<EmployeeShortInfo>(
     employeeList?.data,
     "firstName"
   )
 
-  const handleMangerId = (option: any) => {
+  const _handleMangerId = (option: any) => {
     updateParams?.({
       managerId: option?.value || "",
       pageIndex: 1,
     })
   }
-  const handleDepartmentChange = (option: any) => {
+  const _handleDepartmentChange = (option: any) => {
     updateParams?.({
       departmentId: option?.value || "",
       pageIndex: 1,

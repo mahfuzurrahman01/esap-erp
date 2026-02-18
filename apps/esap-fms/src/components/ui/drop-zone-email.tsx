@@ -75,7 +75,7 @@ export default function DropZoneEmail({
           </Text>
         )
       } catch (err: any) {
-        console.error(err)
+        // Error handled by toast
         toast.error(err.message)
       } finally {
         setIsUploading(false)
@@ -97,10 +97,10 @@ export default function DropZoneEmail({
   const uploadedItems: FileType[] = isEmpty(files)
     ? []
     : files.map((file) => ({
-        name: file.name,
-        url: URL.createObjectURL(file), // Create a URL for the file
-        size: file.size,
-      }))
+      name: file.name,
+      url: URL.createObjectURL(file), // Create a URL for the file
+      size: file.size,
+    }))
 
   const handleUpload = async () => {
     setIsUploading(true)
@@ -113,7 +113,7 @@ export default function DropZoneEmail({
         </Text>
       )
     } catch (err: any) {
-      console.error(err)
+      // Error handled by toast
       toast.error(err.message)
     } finally {
       setIsUploading(false)
@@ -131,7 +131,7 @@ export default function DropZoneEmail({
         className={cn(
           "rounded-md border-[1.8px] dark:border-gray-700",
           !isEmpty(files) &&
-            "flex flex-wrap items-center justify-between @xl:flex-nowrap @xl:pr-6"
+          "flex flex-wrap items-center justify-between @xl:flex-nowrap @xl:pr-6"
         )}>
         <div
           className={cn(

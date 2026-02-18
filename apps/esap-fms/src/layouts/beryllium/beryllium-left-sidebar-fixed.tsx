@@ -10,7 +10,6 @@ import { useTranslations } from "next-intl"
 import { PiTextIndent } from "react-icons/pi"
 import { ActionIcon } from "rizzui"
 
-import { useCurrentRole } from "@/hooks/use-current-role"
 import {
   MenuItemsType,
   berylliumMenuItemAtom,

@@ -80,7 +80,7 @@ function CollapsibleMenuItem({
   const normalizedPathname = pathname.replace(`/${locale}`, "")
 
   // Check authorization for each menu item instead of filtering
-  const getIsAuthorized = (subMenuItem: any) => {
+  const _getIsAuthorized = (subMenuItem: any) => {
     if (!subMenuItem.role || subMenuItem.role.length === 0) return true
     return subMenuItem.role.some((requiredRole: string) =>
       role?.includes(requiredRole)
@@ -132,7 +132,7 @@ function CollapsibleMenuItem({
               "h-3.5 w-3.5 -rotate-90 text-gray-500 transition-transform duration-200 rtl:rotate-90",
               open && "rotate-0 rtl:rotate-0",
               (isActive || isDropdownOpen) &&
-                "text-primary dark:text-primary-lighter"
+              "text-primary dark:text-primary-lighter"
             )}
           />
         </div>
@@ -154,7 +154,7 @@ function CollapsibleMenuItem({
                 ? "bg-gray-500/10 text-title"
                 : "text-body hover:bg-gray-500/20 hover:text-title",
               !isAuthorized &&
-                "cursor-not-allowed opacity-50 hover:bg-transparent"
+              "cursor-not-allowed opacity-50 hover:bg-transparent"
             )}>
             <div className="flex items-center truncate">
               <span className="truncate">{t(subMenuItem?.name)}</span>

@@ -8,7 +8,6 @@ import { useTranslations } from "next-intl"
 import {
   PiMagnifyingGlassBold,
   PiTextColumns,
-  PiTrash,
   PiTrashDuotone,
 } from "react-icons/pi"
 import { useDebounce } from "react-use"
@@ -39,12 +38,12 @@ function FilterElements<T extends Record<string, any>>({
   const t = useTranslations("table")
   const isFiltered = Boolean(
     params?.search ||
-      params?.name ||
-      params?.email ||
-      params?.role ||
-      params?.phoneNumber ||
-      params?.country ||
-      params?.status
+    params?.name ||
+    params?.email ||
+    params?.role ||
+    params?.phoneNumber ||
+    params?.country ||
+    params?.status
   )
   const { data: roles, isLoading: isRoleLoading } = useRoleList()
   const roleOptions = useSelectOptions<RoleList>(roles?.data, "roleName")
@@ -137,11 +136,11 @@ export default function UserTableToolbar<TData extends Record<string, any>>({
   const [openDrawer, setOpenDrawer] = useState(false)
   const [showFilters, setShowFilters] = useState(true)
   const isMediumScreen = useMedia("(max-width: 1860px)", false)
-  const isMultipleSelected = table.getSelectedRowModel().rows.length > 1
+  const _isMultipleSelected = table.getSelectedRowModel().rows.length > 1
   const [searchTerm, setSearchTerm] = useState(params?.search ?? "")
 
   const {
-    options: { meta },
+    options: { meta: _meta },
   } = table
 
   const handleSearch = (value: string) => {
@@ -232,10 +231,10 @@ export default function UserTableToolbar<TData extends Record<string, any>>({
         <Button
           {...(isMediumScreen
             ? {
-                onClick: () => {
-                  setOpenDrawer(() => !openDrawer)
-                },
-              }
+              onClick: () => {
+                setOpenDrawer(() => !openDrawer)
+              },
+            }
             : { onClick: () => setShowFilters(() => !showFilters) })}
           variant={"outline"}
           className={cn(

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { ReactNode, forwardRef, useState } from "react"
+import React, { ReactNode, forwardRef } from "react"
 
 import ReactSelect, { Props as ReactSelectProps } from "react-select"
 import { tv } from "tailwind-variants"

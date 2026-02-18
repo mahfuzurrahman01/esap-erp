@@ -17,7 +17,7 @@ interface UploadZoneProps {
   setFiles: any
   label?: string
   name: string
-  getValues: any
+  _getValues?: any
   setValue: any
   className?: string
   error?: string
@@ -69,41 +69,41 @@ export default function UploadZone({
         </span>
       )}
       {files.length > 0 && (
-          <div className="grid grid-cols-1">
-            {files.map((file:any, index:number) => (
-              <div
-                className="flex min-h-[58px] w-full items-center rounded-xl pe-3"
-                key={`${typeof file === "string" ? file : file.name}-${index}`}>
-                <div className="relative flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg border-dashed border-gray-500/20 bg-gray-500/10 object-cover px-2 py-1.5">
-                  {typeof file === "string" ? (
-                    <Image
-                      src={file} // Use URL directly if it's a string
-                      fill
-                      className="object-contain"
-                      priority
-                      alt={file.split("/").pop() || "file"} // Extract file name from URL
-                      sizes="(max-width: 768px) 100vw"
-                    />
-                  ) : (
-                    <Image
-                      src={URL.createObjectURL(file)} // Create an object URL if it's a File
-                      fill
-                      className="object-contain"
-                      priority
-                      alt={file.name}
-                      sizes="(max-width: 768px) 100vw"
-                    />
-                  )}
-                </div>
+        <div className="grid grid-cols-1">
+          {files.map((file: any, index: number) => (
+            <div
+              className="flex min-h-[58px] w-full items-center rounded-xl pe-3"
+              key={`${typeof file === "string" ? file : file.name}-${index}`}>
+              <div className="relative flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg border-dashed border-gray-500/20 bg-gray-500/10 object-cover px-2 py-1.5">
+                {typeof file === "string" ? (
+                  <Image
+                    src={file} // Use URL directly if it's a string
+                    fill
+                    className="object-contain"
+                    priority
+                    alt={file.split("/").pop() || "file"} // Extract file name from URL
+                    sizes="(max-width: 768px) 100vw"
+                  />
+                ) : (
+                  <Image
+                    src={URL.createObjectURL(file)} // Create an object URL if it's a File
+                    fill
+                    className="object-contain"
+                    priority
+                    alt={file.name}
+                    sizes="(max-width: 768px) 100vw"
+                  />
+                )}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
       )}
       <div
         className={cn(
           "rounded-md border-[1.8px] bg-[#f5f1f1] dark:bg-gray-700 h-16 w-16 dark:border-gray-600 p-2 border-dashed",
           !isEmpty(files) &&
-            "flex flex-wrap items-center justify-between @xl:flex-nowrap @xl:pr-6"
+          "flex flex-wrap items-center justify-between @xl:flex-nowrap @xl:pr-6"
         )}>
         <div
           className={cn(

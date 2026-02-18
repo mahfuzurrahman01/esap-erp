@@ -27,11 +27,7 @@ export const journalEntryFormSchema = z.object({
   totalCredit: z.union([z.number(), z.null()]).optional(),
 })
 
-// Template detail schema
-const templateDetailSchema = z.object({
-  id: z.number().optional(),
-  chartOfAccountId: z.number(),
-})
+
 
 // Template schema - updated to match JournalTemplate type
 export const journalTemplateFormSchema = z.object({

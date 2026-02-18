@@ -44,7 +44,7 @@ export default function OTPForm() {
       }
       await mutation.mutateAsync(payload)
     } catch (error) {
-      console.error("Error:", error)
+      // Error handled by mutation
     } finally {
       setLoading(false)
     }

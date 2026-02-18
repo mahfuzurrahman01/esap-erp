@@ -1,5 +1,3 @@
-import { SVGProps } from "react"
-
 import cn from "@core/utils/class-names"
 
 type CalendarIconProps = Omit<React.ComponentProps<'svg'>, "height" | "width"> & {
