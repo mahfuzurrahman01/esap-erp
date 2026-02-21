@@ -38,15 +38,16 @@ import { CountryList } from "@/modules/fms/types/country"
 
 export default function UserEditForm({
   id,
+  mode,
 }: {
   id?: string
   mode: "edit" | "create"
 }) {
   const t = useTranslations("form")
-  const { data:userData }: any = useUserById(id!)
+  const { data: userData }: any = useUserById(id!)
   const router = useRouter()
-  const { data: roles, isLoading: isRoleLoading } = useRoleList({pageSize:100})
-  const { data: countries, isLoading: isCountryLoading } = useCountryList({pageSize:100})
+  const { data: roles, isLoading: isRoleLoading } = useRoleList({ pageSize: 100 })
+  const { data: countries, isLoading: isCountryLoading } = useCountryList({ pageSize: 100 })
   const [file, setFile] = useState<File | string>("")
 
   const countryOptions = useSelectOptions<CountryList>(
@@ -66,7 +67,7 @@ export default function UserEditForm({
   const { user } = useCurrentUser()
   const avatarUrl =
     userData?.data?.profilePicturePath &&
-    userData?.data?.profilePicturePath.startsWith("http")
+      userData?.data?.profilePicturePath.startsWith("http")
       ? userData?.data?.profilePicturePath
       : ""
 
@@ -103,6 +104,7 @@ export default function UserEditForm({
     const newFormData = {
       ...formData,
       Email: formData.email,
+      Password: formData.password,
       Country: Number(formData.country),
       File: formData.file,
       CoverPhoto: file,
@@ -121,11 +123,11 @@ export default function UserEditForm({
 
   const formattedData = userData?.data
     ? {
-        ...userData?.data,
-        email: userData?.data?.applicationUser?.email || "a@b.com",
-        password: "",
-        country: Number(userData.data.country),
-      }
+      ...userData?.data,
+      email: userData?.data?.applicationUser?.email || "a@b.com",
+      password: "",
+      country: Number(userData.data.country),
+    }
     : initiaUserData
 
   return (
@@ -195,19 +197,21 @@ export default function UserEditForm({
                     }
                   />
 
-                  {/* <Password
-                    label={
-                      <>
-                        {t("form-password")} <span className="text-orange-500">*</span>
-                      </>
-                    }
-                    inputClassName="border-body/20 hover:border-title focus:border-2 focus:border-title ring-0 text-title"
-                    placeholder={t("form-enter-password")}
-                    autoComplete="off"
-                    {...register("password")}
-                    {...register("password", { required: "Password is required" })}
-                    error={errors.password?.message}
-                  /> */}
+                  {mode === "create" && (
+                    <Password
+                      label={
+                        <>
+                          {t("form-password")}{" "}
+                          <span className="text-orange-500">*</span>
+                        </>
+                      }
+                      inputClassName="border-body/20 hover:border-title focus:border-2 focus:border-title ring-0 text-title"
+                      placeholder={t("form-enter-password")}
+                      autoComplete="off"
+                      {...register("password")}
+                      error={errors.password?.message}
+                    />
+                  )}
 
                   <Input
                     type="number"
@@ -279,8 +283,8 @@ export default function UserEditForm({
                         value={
                           Array.isArray(value)
                             ? roleOptions.filter((option) =>
-                                value.includes(option.value.toString())
-                              )
+                              value.includes(option.value.toString())
+                            )
                             : []
                         }
                         onChange={(options: any) => {
@@ -330,7 +334,7 @@ export default function UserEditForm({
                         <Checkbox
                           label={t("form-enable-notification")}
                           checked={value}
-                          onChange={(e:any) => onChange(e)}
+                          onChange={(e: any) => onChange(e)}
                         />
                       )}
                     />
@@ -348,7 +352,7 @@ export default function UserEditForm({
                           <Checkbox
                             label={t("form-twoFactorEnabled")}
                             checked={value}
-                            onChange={(e:any) => {
+                            onChange={(e: any) => {
                               onChange(e)
                               if (e.target.checked) {
                                 enableTwoFactorAuth(
